@@ -36,16 +36,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
     stats.forEach(stat => statsObserver.observe(stat));
 
+    // --- REVEAL ON SCROLL ---
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // --- NAV SCROLL EFFECT ---
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+
     // --- GITHUB SYNC FOR SYNONTECH CARD ---
     const synonTechStatus = document.querySelector('.lock-tag');
 
     async function syncStudioRepos() {
         try {
-            const response = await fetch('https://api.github.com/users/SynonTechSA-Hub/repos');
+            const response = await fetch('https://api.github.com/users/SynonTechSA-Hub/repos?sort=updated');
             const repos = await response.json();
-            const projectCount = repos.filter(repo => !repo.fork && !repo.name.toLowerCase().endsWith('-website')).length;
+            
+            // Filter out forks and website repos
+            const studioRepos = repos.filter(repo => !repo.fork && !repo.name.toLowerCase().endsWith('-website'));
+            const projectCount = studioRepos.length;
+            
             if (synonTechStatus) {
-                synonTechStatus.textContent = `${projectCount} Studio Projects`;
+                // Find the most recently updated repo
+                const latestRepo = studioRepos[0];
+                const lastUpdated = new Date(latestRepo.updated_at).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+                
+                synonTechStatus.innerHTML = `<span>${projectCount} Projects</span> • <small>Updated ${lastUpdated}</small>`;
+                synonTechStatus.style.background = 'var(--accent)';
             }
         } catch (err) {
             console.warn('Github sync failed');
@@ -53,9 +84,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     syncStudioRepos();
 
-    // --- MOBILE MENU ---
-    const brand = document.querySelector('.brand');
-    const navLinks = document.querySelector('.nav-links');
+    // --- SUBTLE PARALLAX ---
+    document.addEventListener('mousemove', (e) => {
+        const amount = 15;
+        const x = (e.clientX / window.innerWidth - 0.5) * amount;
+        const y = (e.clientY / window.innerHeight - 0.5) * amount;
+        
+        const heroContent = document.querySelector('.hero-content');
+        if (heroContent) {
+            heroContent.style.transform = `translate(${x}px, ${y}px)`;
+        }
+    });
 
-    // Simple toggle for mobile if we add a hamburger later
 });
