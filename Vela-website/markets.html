@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markets — Vela</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- GLO BACKDROPS -->
+    <div class="glow-bg">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+    </div>
+
+    <nav>
+        <div class="logo"><a href="index.html">VELA<span>.</span></a></div>
+        <ul class="nav-links">
+            <li><a href="markets.html" class="active">Markets</a></li>
+            <li><a href="security.html">Security</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle">🌙</button>
+            <a href="404.html" class="btn-text">Log In</a>
+            <a href="404.html" class="btn-primary">Get Started</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <a href="markets.html">Markets</a>
+        <a href="security.html">Security</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="404.html">Log In</a>
+        <a href="404.html" class="btn-primary">Get Started</a>
+    </div>
+
+    <main>
+        <section class="hero" style="padding: 4rem 8% 2rem; text-align: left;">
+            <div class="badge">Live Market Data <span id="price-status" style="color: var(--success-green);"><span class="status-dot"></span> Live</span></div>
+            <h1 style="font-size: 3rem;">Market Overview</h1>
+            <p style="margin: 0;">Trade top digital assets with industry-leading liquidity.</p>
+        </section>
+
+        <section style="padding: 0 8% 8rem;">
+            <div class="glass-card" style="padding: 0; overflow: hidden;">
+                <div class="table-scroll-wrapper">
+                    <table class="markets-table">
+                        <thead>
+                            <tr style="background: var(--bg-alt); color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                                <th style="padding: 1.5rem 2rem;">Asset</th>
+                                <th style="padding: 1.5rem 2rem;">Price (ZAR)</th>
+                                <th style="padding: 1.5rem 2rem;">24h Change</th>
+                                <th style="padding: 1.5rem 2rem;">Market Cap</th>
+                                <th style="padding: 1.5rem 2rem;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color: var(--navy-dark); font-weight: 500;">
+                            <tr style="border-bottom: 1px solid var(--border-light);">
+                                <td style="padding: 1.5rem 2rem; display: flex; align-items: center; gap: 1rem;">
+                                    <div class="asset-icon btc">B</div> <strong>Bitcoin</strong> <span style="color: var(--text-muted); font-size: 0.8rem;">BTC</span>
+                                </td>
+                                <td style="padding: 1.5rem 2rem;" id="market-price-btc">R 1,245,600</td>
+                                <td style="padding: 1.5rem 2rem; color: var(--success-green);" id="market-change-btc">+2.45%</td>
+                                <td style="padding: 1.5rem 2rem; color: var(--text-muted);">R 24.2T</td>
+                                <td style="padding: 1.5rem 2rem;"><a href="404.html" class="btn-secondary" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">Trade</a></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);">
+                                <td style="padding: 1.5rem 2rem; display: flex; align-items: center; gap: 1rem;">
+                                    <div class="asset-icon eth">E</div> <strong>Ethereum</strong> <span style="color: var(--text-muted); font-size: 0.8rem;">ETH</span>
+                                </td>
+                                <td style="padding: 1.5rem 2rem;" id="market-price-eth">R 45,200</td>
+                                <td style="padding: 1.5rem 2rem; color: #E74C3C;" id="market-change-eth">-1.12%</td>
+                                <td style="padding: 1.5rem 2rem; color: var(--text-muted);">R 5.4T</td>
+                                <td style="padding: 1.5rem 2rem;"><a href="404.html" class="btn-secondary" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">Trade</a></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);">
+                                <td style="padding: 1.5rem 2rem; display: flex; align-items: center; gap: 1rem;">
+                                    <div class="asset-icon gold">G</div> <strong>PAX Gold</strong> <span style="color: var(--text-muted); font-size: 0.8rem;">PAXG</span>
+                                </td>
+                                <td style="padding: 1.5rem 2rem;">R 38,450</td>
+                                <td style="padding: 1.5rem 2rem; color: var(--success-green);">+0.15%</td>
+                                <td style="padding: 1.5rem 2rem; color: var(--text-muted);">R 0.8T</td>
+                                <td style="padding: 1.5rem 2rem;"><a href="404.html" class="btn-secondary" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">Trade</a></td>
+                            </tr>
+                             <tr style="border-bottom: 1px solid var(--border-light);">
+                                <td style="padding: 1.5rem 2rem; display: flex; align-items: center; gap: 1rem;">
+                                    <div class="asset-icon btc" style="background: #2775CA;">S</div> <strong>USD Coin</strong> <span style="color: var(--text-muted); font-size: 0.8rem;">USDC</span>
+                                </td>
+                                <td style="padding: 1.5rem 2rem;">R 18.42</td>
+                                <td style="padding: 1.5rem 2rem; color: var(--text-muted);">0.00%</td>
+                                <td style="padding: 1.5rem 2rem; color: var(--text-muted);">R 4.2T</td>
+                                <td style="padding: 1.5rem 2rem;"><a href="404.html" class="btn-secondary" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">Trade</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="color:white">VELA<span>.</span></div>
+            <p>Vela Financial is a registered FSP in South Africa.</p>
+            <div class="footer-bottom">
+                &copy; 2024 Vela. All rights reserved.
+                <div class="links" style="display:flex; gap: 2rem;">
+                    <a href="404.html">Terms</a>
+                    <a href="404.html">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

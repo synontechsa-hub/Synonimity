@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found — Solstice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-container {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+        }
+        .error-container h1 {
+            font-size: 8rem;
+            margin-bottom: 0;
+            color: var(--accent-sand);
+        }
+        .error-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .error-container p {
+            max-width: 500px;
+            margin-bottom: 3rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-left">
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="index.html#story" class="nav-link">Story</a>
+            </div>
+            <div class="logo">
+                <a href="index.html">SOLSTICE</a>
+            </div>
+            <div class="nav-right">
+                <a href="404.html" class="nav-link">Search</a>
+                <a href="#" class="nav-link cart-trigger">Cart (0)</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-menu">
+        <a href="shop.html" class="mobile-link">Shop</a>
+        <a href="index.html#story" class="mobile-link">Story</a>
+        <a href="404.html" class="mobile-link">Search</a>
+        <a href="#" class="mobile-link cart-trigger">Cart (0)</a>
+    </div>
+
+    <!-- Cart Drawer & Overlay (for 404 page) -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header"><h3>Your Cart</h3><button class="close-cart">&times;</button></div>
+        <div class="cart-items" id="cartItems"><p class="empty-msg">Your cart is empty.</p></div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total</span><span id="cartTotalValue">R 0.00</span></div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <main>
+        <section class="error-container">
+            <h1>404</h1>
+            <h2>Lost in the details.</h2>
+            <p>The page you are looking for has been moved or doesn't exist. Let's get you back to the collection.</p>
+            <a href="index.html" class="btn-primary">Return Home</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo">SOLSTICE</div>
+                <p>Conscious goods for the modern home.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <a href="shop.html">New Arrivals</a>
+                <a href="shop.html">Best Sellers</a>
+                <a href="shop.html">Home Goods</a>
+                <a href="shop.html">Textiles</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="about.html">About Us</a>
+                <a href="sustainability.html">Sustainability</a>
+                <a href="404.html">Journal</a>
+                <a href="404.html">Careers</a>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <a href="404.html">Shipping</a>
+                <a href="404.html">Returns</a>
+                <a href="contact.html">Contact</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Solstice. Conscious goods for the modern home.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

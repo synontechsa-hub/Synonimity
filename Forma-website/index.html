@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forma — Architecture & Spatial Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="forma-styles.css">
+    <script src="forma-script.js" defer></script>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav id="mainNav">
+    <a href="index.html" class="logo">Forma</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle Menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="work.html">Work</a></li>
+        <li><a href="studio.html">Studio</a></li>
+        <li><a href="#s5">Process</a></li>
+        <li><a href="journal.html">Journal</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Begin a project</a>
+</nav>
+
+<!-- PROGRESS DOTS -->
+<div class="progress" id="progress">
+    <div class="progress-dot active" title="Hero"></div>
+    <div class="progress-dot" title="Manifesto"></div>
+    <div class="progress-dot" title="Services"></div>
+    <div class="progress-dot" title="Featured Project"></div>
+    <div class="progress-dot" title="Process"></div>
+    <div class="progress-dot" title="CTA"></div>
+</div>
+
+<!-- S1: HERO -->
+<section class="s1" id="s1">
+    <div class="s1-bg-img"></div>
+    <div class="s1-overlay"></div>
+    <div class="s1-content">
+        <div class="eyebrow fade-up">Architecture & Spatial Design</div>
+        <h1 class="hero-title fade-up fade-up-d1">Space is<br>not empty.<br><em>It speaks.</em></h1>
+        <p class="hero-sub fade-up fade-up-d2">We design environments that hold meaning — structures that endure beyond their function, spaces that shape how people feel, think, and remember.</p>
+        <div class="hero-ctas fade-up fade-up-d3">
+            <a href="work.html" class="btn-gold">View our work</a>
+            <a href="studio.html" class="btn-link">Our approach</a>
+        </div>
+    </div>
+</section>
+
+<!-- S2: MANIFESTO -->
+<section class="s2" id="s2">
+    <div class="s2-inner">
+        <p class="s2-quote fade-up">"We do not build for the moment —<br>we build for the <em>memory of the moment,</em><br>long after the moment has passed."</p>
+        <div class="s2-rule fade-up fade-up-d1"></div>
+        <div class="s2-attr fade-up fade-up-d2">— Forma Studio, founding principles, 2001</div>
+    </div>
+</section>
+
+<!-- S3: SERVICES -->
+<section class="s3" id="s3">
+    <div class="s3-inner">
+        <div class="s3-left">
+            <div class="section-num fade-up">02 / Services</div>
+            <h2 class="section-heading fade-up fade-up-d1">What we<br><em>do best.</em></h2>
+            <p class="section-body fade-up fade-up-d2">Four disciplines. One philosophy. Every project begins with listening and ends with something that outlasts the brief.</p>
+        </div>
+        <div class="s3-right">
+            <div class="service-item fade-up"><div class="service-num-small">01</div><div class="service-content"><div class="service-name">Architectural Design</div><div class="service-desc">From concept to construction — residential, commercial, civic</div></div><div class="service-arrow">→</div></div>
+            <div class="service-item fade-up fade-up-d1"><div class="service-num-small">02</div><div class="service-content"><div class="service-name">Interior Architecture</div><div class="service-desc">Spatial narratives that make people feel something</div></div><div class="service-arrow">→</div></div>
+            <div class="service-item fade-up fade-up-d2"><div class="service-num-small">03</div><div class="service-content"><div class="service-name">Master Planning</div><div class="service-desc">Urban scale thinking, human scale delivery</div></div><div class="service-arrow">→</div></div>
+            <div class="service-item fade-up fade-up-d3"><div class="service-num-small">04</div><div class="service-content"><div class="service-name">Heritage Conservation</div><div class="service-desc">Preserving the past, preparing it for the future</div></div><div class="service-arrow">→</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- S4: FEATURED PROJECT -->
+<section class="s4" id="s4">
+    <div class="s4-bg-img"></div>
+    <div class="s4-content">
+        <div>
+            <div class="s4-label fade-up">03 / Featured project</div>
+            <h2 class="s4-title fade-up fade-up-d1">The Meridian<br><em>Tower.</em></h2>
+            <div class="s4-meta fade-up fade-up-d2">
+                <div class="s4-meta-item"><div class="s4-meta-key">Location</div><div class="s4-meta-val">Oslo, Norway</div></div>
+                <div class="s4-meta-item"><div class="s4-meta-key">Year</div><div class="s4-meta-val">2023</div></div>
+                <div class="s4-meta-item"><div class="s4-meta-key">Category</div><div class="s4-meta-val">Mixed-use</div></div>
+                <div class="s4-meta-item"><div class="s4-meta-key">Scale</div><div class="s4-meta-val">42,000 m²</div></div>
+            </div>
+            <a href="project-meridian.html" class="btn-link fade-up fade-up-d3">View full case study</a>
+        </div>
+        <div class="s4-right fade-up fade-up-d2">
+            <div class="project-frame">
+                <div class="project-img-full"></div>
+                <div class="project-tag">2023 — Oslo</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- S5: PROCESS -->
+<section class="s5" id="s5">
+    <div class="s5-inner">
+        <div class="s5-left">
+            <div class="section-num fade-up">04 / Process</div>
+            <h2 class="section-heading fade-up fade-up-d1">How we<br><em>work.</em></h2>
+            <p class="section-body fade-up fade-up-d2">Our process is not a formula. It is a conversation — structured enough to deliver, open enough to discover.</p>
+        </div>
+        <div class="s5-right">
+            <div class="process-grid">
+                <div class="process-step fade-up"><div class="step-num">01</div><div class="step-name">Listen</div><div class="step-desc">We begin by understanding not just the brief, but what the brief is trying to say.</div></div>
+                <div class="process-step fade-up fade-up-d1"><div class="step-num">02</div><div class="step-name">Conceive</div><div class="step-desc">From insight comes concept — a clear spatial idea that guides every decision.</div></div>
+                <div class="process-step fade-up fade-up-d2"><div class="step-num">03</div><div class="step-name">Develop</div><div class="step-desc">Rigorous design development, tested against reality at every stage.</div></div>
+                <div class="process-step fade-up fade-up-d3"><div class="step-num">04</div><div class="step-name">Deliver</div><div class="step-desc">On time, on brief, and beyond expectation. Every time.</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- S6: CTA -->
+<section class="s6" id="s6">
+    <div class="s6-bg-img"></div>
+    <div class="s6-content">
+        <div class="s6-eyebrow fade-up">05 / Let's begin</div>
+        <h2 class="s6-title fade-up fade-up-d1">Your next space<br>starts with a<br><em>conversation.</em></h2>
+        <p class="s6-sub fade-up fade-up-d2">We take on a limited number of projects each year to ensure every client receives our full attention. If you have a project in mind, we'd love to hear from you.</p>
+        <div class="s6-ctas fade-up fade-up-d3">
+            <a href="contact.html" class="s6-btn">Start a conversation</a>
+            <a href="404-v2.html" class="s6-btn-ghost">Download credentials</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER BAR -->
+<div class="footer-bar">
+    <div class="footer-loc">Oslo · London · Tokyo · Cape Town</div>
+    <ul class="footer-links" style="display:flex; gap:2rem; list-style:none;">
+        <li><a href="journal.html" style="font-size:0.65rem; color:rgba(245,240,232,0.25); text-decoration:none;">Journal</a></li>
+        <li><a href="sustainability.html" style="font-size:0.65rem; color:rgba(245,240,232,0.25); text-decoration:none;">Sustainability</a></li>
+        <li><a href="https://www.linkedin.com/in/bruce-gordon-designs/" target="_blank" style="font-size:0.65rem; color:rgba(245,240,232,0.25); text-decoration:none;">LinkedIn</a></li>
+    </ul>
+</div>
+
+</body>
+</html>

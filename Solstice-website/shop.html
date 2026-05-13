@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop All — Solstice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="shop-page">
+
+    <!-- Header/Navigation -->
+    <header class="scrolled"> <!-- Fixed header for shop -->
+        <nav>
+            <div class="nav-left">
+                <a href="shop.html" class="nav-link active">Shop</a>
+                <a href="index.html#story" class="nav-link">Story</a>
+            </div>
+            <div class="logo">
+                <a href="index.html">SOLSTICE</a>
+            </div>
+            <div class="nav-right">
+                <a href="404.html" class="nav-link">Search</a>
+                <a href="#" class="nav-link cart-trigger">Cart (0)</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-menu">
+        <a href="shop.html" class="mobile-link active">Shop</a>
+        <a href="index.html#story" class="mobile-link">Story</a>
+        <a href="404.html" class="mobile-link">Search</a>
+        <a href="#" class="mobile-link cart-trigger">Cart (0)</a>
+    </div>
+
+    <main>
+        <section class="shop-hero reveal">
+            <h1>The Collection</h1>
+            <p>Thoughtfully designed objects for a slower pace of life.</p>
+        </section>
+
+        <section class="shop-container">
+            <!-- Sidebar Filters -->
+            <aside class="shop-sidebar reveal">
+                <div class="filter-group">
+                    <h4>Category</h4>
+                    <ul class="category-filters">
+                        <li><a href="#" class="active" data-filter="all">All Items</a></li>
+                        <li><a href="#" data-filter="furniture">Furniture</a></li>
+                        <li><a href="#" data-filter="textiles">Textiles</a></li>
+                        <li><a href="#" data-filter="ceramics">Ceramics</a></li>
+                        <li><a href="#" data-filter="fragrance">Home Fragrance</a></li>
+                    </ul>
+                </div>
+                <div class="filter-group">
+                    <h4>Sort By</h4>
+                    <ul>
+                        <li><a href="#">Newest</a></li>
+                        <li><a href="#">Price: Low to High</a></li>
+                        <li><a href="#">Price: High to Low</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Product Grid -->
+            <div class="shop-content">
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card reveal" data-category="ceramics">
+                        <div class="product-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&q=80&w=800" alt="Terra Cotta Vessel">
+                            <button class="quick-add" data-id="1" data-name="Terra Cotta Vessel" data-price="850" data-img="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&q=80&w=800"> + Quick Add</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Terra Cotta Vessel</h3>
+                            <p class="price">R 850.00</p>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="product-card reveal" data-category="textiles">
+                        <div class="product-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800" alt="Organic Hemp Tote">
+                            <button class="quick-add" data-id="2" data-name="Organic Hemp Tote" data-price="550" data-img="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800">+ Quick Add</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Organic Hemp Tote</h3>
+                            <p class="price">R 550.00</p>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="product-card reveal" data-category="textiles">
+                        <div class="product-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&q=80&w=800" alt="Recycled Wool Throw">
+                            <button class="quick-add" data-id="3" data-name="Recycled Wool Throw" data-price="2100" data-img="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&q=80&w=800">+ Quick Add</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Recycled Wool Throw</h3>
+                            <p class="price">R 2,100.00</p>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="product-card reveal" data-category="furniture">
+                        <div class="product-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80&w=800" alt="Oak Serving Board">
+                            <button class="quick-add" data-id="4" data-name="Oak Serving Board" data-price="1200" data-img="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80&w=800">+ Quick Add</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Oak Serving Board</h3>
+                            <p class="price">R 1,200.00</p>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="product-card reveal" data-category="textiles">
+                        <div class="product-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&q=80&w=800" alt="Linen Pillow Cover">
+                            <button class="quick-add" data-id="5" data-name="Linen Pillow Cover" data-price="450" data-img="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&q=80&w=800">+ Quick Add</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Linen Pillow Cover</h3>
+                            <p class="price">R 450.00</p>
+                        </div>
+                    </div>
+                    <!-- Product 6 -->
+                    <div class="product-card reveal" data-category="fragrance">
+                        <div class="product-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1602872029708-84d970d3382b?auto=format&fit=crop&q=80&w=800" alt="Hand-poured Soy Candle">
+                            <button class="quick-add" data-id="6" data-name="Hand-poured Soy Candle" data-price="380" data-img="https://images.unsplash.com/photo-1602872029708-84d970d3382b?auto=format&fit=crop&q=80&w=800">+ Quick Add</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Hand-poured Soy Candle</h3>
+                            <p class="price">R 380.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Drawer -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Items will be injected by JS -->
+            <p class="empty-msg">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cartTotalValue">R 0.00</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo">SOLSTICE</div>
+                <p>Conscious goods for the modern home.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <a href="shop.html">New Arrivals</a>
+                <a href="shop.html">Best Sellers</a>
+                <a href="shop.html">Home Goods</a>
+                <a href="shop.html">Textiles</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="about.html">About Us</a>
+                <a href="sustainability.html">Sustainability</a>
+                <a href="404.html">Journal</a>
+                <a href="404.html">Careers</a>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <a href="404.html">Shipping</a>
+                <a href="404.html">Returns</a>
+                <a href="contact.html">Contact</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Solstice. Crafted for the conscious home.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

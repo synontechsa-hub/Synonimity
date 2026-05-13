@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found | Forma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="forma-styles.css">
+    <style>
+        .error-page {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--dark);
+        }
+        .error-grid {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(184,151,90,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(184,151,90,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+        .error-num {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(10rem, 30vw, 25rem);
+            font-weight: 300;
+            color: rgba(245,240,232,0.02);
+            line-height: 1;
+            z-index: 1;
+        }
+        .error-content {
+            position: relative;
+            z-index: 2;
+            max-width: 500px;
+            padding: 2rem;
+        }
+        .error-eyebrow {
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 2rem;
+        }
+        .error-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+        .error-title em { font-style: italic; color: var(--gold2); }
+        .error-desc {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: rgba(245,240,232,0.5);
+            margin-bottom: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <div class="error-page">
+        <div class="error-grid"></div>
+        <div class="error-num">404</div>
+        <div class="error-content">
+            <div class="error-eyebrow">Space not found</div>
+            <h1 class="error-title">This path leads to <em>nowhere.</em></h1>
+            <p class="error-desc">The page you are looking for has been moved, renamed, or never existed in our blueprints. Like a well-designed space, we should return to the center.</p>
+            <a href="index.html" class="btn-gold" style="text-decoration: none;">Return home</a>
+        </div>
+    </div>
+
+    <script src="forma-script.js"></script>
+</body>
+</html>

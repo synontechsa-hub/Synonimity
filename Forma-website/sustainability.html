@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainability — Forma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="forma-styles.css">
+    <style>
+        .sus-hero {
+            padding: 10rem 3.5rem 5rem;
+            background: var(--dark2);
+        }
+        .sus-grid {
+            padding: 6rem 3.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+        }
+        .sus-metric {
+            padding: 2rem;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        .metric-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            color: var(--gold);
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <nav>
+        <a href="index.html" class="logo">Forma</a>
+        <ul class="nav-links">
+            <li><a href="work.html">Work</a></li>
+            <li><a href="studio.html">Studio</a></li>
+            <li><a href="index.html#s4">Process</a></li>
+            <li><a href="journal.html">Journal</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta">Begin a project</a>
+    </nav>
+
+    <header class="sus-hero">
+        <div class="eyebrow fade-up">Environmental Impact</div>
+        <h1 class="hero-title fade-up d1">Building for <em>forever.</em></h1>
+        <p class="hero-sub fade-up d2">Our commitment to sustainability isn't a checklist—it's the foundation of our structural logic. We design for the carbon economy of 2050, today.</p>
+    </header>
+
+    <main class="sus-grid">
+        <div class="fade-up">
+            <h2 class="section-heading">Circular Thinking</h2>
+            <p style="color: rgba(245,240,232,0.5); line-height: 1.8;">We prioritize adaptive reuse of existing structures. Every brick we don't have to manufacture is a victory for the planet. Our projects average 40% lower embodied carbon than industry standards.</p>
+        </div>
+        <div class="sus-metric fade-up d1">
+            <div class="metric-num">40%</div>
+            <div class="stat-label">Lower Embodied Carbon</div>
+        </div>
+    </main>
+
+    <footer class="footer-bar" style="position: relative;">
+        <div class="footer-loc">Oslo · London · Tokyo · Cape Town</div>
+        <ul class="footer-links" style="display:flex; gap:2rem; list-style:none;">
+            <li><a href="journal.html" style="font-size:0.65rem; color:rgba(245,240,232,0.25); text-decoration:none;">Journal</a></li>
+            <li><a href="sustainability.html" style="font-size:0.65rem; color:rgba(245,240,232,0.25); text-decoration:none;">Sustainability</a></li>
+        </ul>
+    </footer>
+
+    <script src="forma-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started — NexusAI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .auth-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 2rem;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .auth-container h1 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .auth-container p {
+            font-size: 0.875rem;
+            color: var(--slate);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.4rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(29,78,216,0.1);
+        }
+        .auth-btn {
+            width: 100%;
+            background: var(--navy);
+            color: #fff;
+            padding: 0.85rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .auth-btn:hover {
+            background: var(--blue);
+        }
+        .auth-footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--slate);
+        }
+        .auth-footer a {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body style="background: var(--bg2);">
+
+<nav>
+    <div class="logo"><a href="index.html">Nexus<span>AI</span></a></div>
+</nav>
+
+<div class="auth-container">
+    <h1>Create your account</h1>
+    <p>Start your 14-day free trial. No credit card required.</p>
+    <form onsubmit="event.preventDefault(); alert('In a real app, this would sign you up!');">
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Work Email</label>
+            <input type="email" id="email" placeholder="john@company.com" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="auth-btn">Create Account</button>
+    </form>
+    <div class="auth-footer">
+        Already have an account? <a href="#">Log in</a>
+    </div>
+</div>
+
+</body>
+</html>

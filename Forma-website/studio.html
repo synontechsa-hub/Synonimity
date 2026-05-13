@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio — Forma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root {
+  --cream: #F5F0E8;
+  --dark: #0F0E0C;
+  --dark2: #1A1916;
+  --gold: #B8975A;
+  --gold2: #D4B483;
+  --muted: #7A7570;
+  --muted2: #A89F94;
+  --border: rgba(245,240,232,0.07);
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  background: var(--dark);
+  color: var(--cream);
+  min-height: 100vh;
+  cursor: none;
+  overflow-x: hidden;
+}
+.cursor {
+  position: fixed; width: 8px; height: 8px;
+  background: var(--gold); border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: width 0.3s, height 0.3s;
+}
+.cursor-ring {
+  position: fixed; width: 36px; height: 36px;
+  border: 1px solid rgba(184,151,90,0.5); border-radius: 50%;
+  pointer-events: none; z-index: 9998;
+  transform: translate(-50%,-50%);
+  transition: width 0.3s, height 0.3s;
+}
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 2rem 3.5rem;
+  background: rgba(15,14,12,0.9); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.logo {
+  font-family: 'Cormorant Garamond', serif; font-weight: 300;
+  font-size: 1.5rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--cream); text-decoration: none;
+}
+.nav-links { display: flex; gap: 3rem; list-style: none; }
+.nav-links a {
+  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(245,240,232,0.5); text-decoration: none; transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--cream); }
+.nav-links a.active { color: var(--gold); }
+.nav-cta {
+  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold); border: 1px solid rgba(184,151,90,0.4);
+  padding: 0.6rem 1.5rem; text-decoration: none; transition: all 0.3s;
+}
+.nav-cta:hover { background: var(--gold); color: var(--dark); }
+
+/* HERO */
+.studio-hero {
+  min-height: 100vh; display: flex; align-items: flex-end;
+  padding: 0 3.5rem 6rem; position: relative; overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 80% 40%, rgba(184,151,90,0.05) 0%, transparent 70%);
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(245,240,232,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(245,240,232,0.02) 1px, transparent 1px);
+  background-size: 100px 100px;
+}
+.hero-year {
+  position: absolute; top: 10rem; right: 3.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(8rem, 18vw, 16rem); font-weight: 300;
+  color: rgba(245,240,232,0.025); line-height: 1; letter-spacing: -0.05em;
+  pointer-events: none; user-select: none;
+}
+.hero-content {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
+  align-items: flex-end; width: 100%;
+}
+.eyebrow {
+  font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 1rem;
+}
+.eyebrow::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+.hero-title {
+  font-family: 'Cormorant Garamond', serif; font-weight: 300;
+  font-size: clamp(3.5rem, 7vw, 7rem); line-height: 0.92; letter-spacing: -0.03em;
+}
+.hero-title em { font-style: italic; color: var(--gold2); }
+.hero-statement {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.4rem;
+  font-weight: 300; line-height: 1.6; color: rgba(245,240,232,0.65);
+  margin-bottom: 2rem; font-style: italic;
+}
+.hero-body {
+  font-size: 0.875rem; line-height: 1.9; color: rgba(245,240,232,0.38); max-width: 420px;
+}
+
+/* FOUNDING */
+.founding {
+  background: var(--cream); color: var(--dark);
+  padding: 8rem 3.5rem; position: relative; overflow: hidden;
+}
+.founding-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 8rem; align-items: center; }
+.founding-geo {
+  position: absolute; top: 4rem; right: 4rem;
+  width: 120px; height: 120px; border: 1px solid rgba(15,14,12,0.08);
+}
+.founding-geo::before {
+  content: ''; position: absolute; inset: 16px; border: 1px solid rgba(15,14,12,0.05);
+}
+.section-num {
+  font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 1rem;
+}
+.section-num::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+.section-title {
+  font-family: 'Cormorant Garamond', serif; font-weight: 300;
+  font-size: clamp(2.5rem, 4vw, 4rem); line-height: 1.0;
+  letter-spacing: -0.02em; color: var(--dark);
+}
+.section-title em { font-style: italic; color: var(--gold); }
+.founding-para {
+  font-size: 0.925rem; line-height: 1.95; color: rgba(15,14,12,0.58); margin-bottom: 1.5rem;
+}
+.founding-para strong { color: var(--dark); font-weight: 500; }
+
+/* STATS */
+.stats-band {
+  background: var(--dark2); padding: 5rem 3.5rem;
+  display: grid; grid-template-columns: repeat(4,1fr);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.stat-block { padding: 2rem 3rem; border-right: 1px solid var(--border); text-align: center; }
+.stat-block:last-child { border-right: none; }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif; font-weight: 300;
+  font-size: clamp(3rem, 5vw, 5rem); line-height: 1; color: var(--cream); margin-bottom: 0.5rem;
+}
+.stat-num sup { font-size: 0.4em; vertical-align: super; color: var(--gold); }
+.stat-desc { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted2); }
+
+/* TEAM */
+.team { padding: 8rem 3.5rem; background: var(--dark); }
+.team-header {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  align-items: flex-end; margin-bottom: 5rem; padding-bottom: 3rem;
+  border-bottom: 1px solid var(--border);
+}
+.team-header-right { font-size: 0.875rem; line-height: 1.9; color: rgba(245,240,232,0.38); max-width: 400px; }
+.team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; }
+.team-card {}
+.team-portrait {
+  width: 100%; aspect-ratio: 3/4; background: var(--dark2);
+  position: relative; overflow: hidden; margin-bottom: 1.25rem;
+  border: 1px solid var(--border);
+}
+.portrait-bg { position: absolute; inset: 0; transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94); }
+.team-card:hover .portrait-bg { transform: scale(1.04); }
+.p1 { background: linear-gradient(160deg, #1C1A16 0%, #0F0E0C 100%); }
+.p2 { background: linear-gradient(140deg, #161820 0%, #0F0E0C 100%); }
+.p3 { background: linear-gradient(170deg, #1A1614 0%, #0F0E0C 100%); }
+.p4 { background: linear-gradient(150deg, #141A16 0%, #0F0E0C 100%); }
+.portrait-initial {
+  position: absolute; bottom: 1.25rem; left: 1.25rem;
+  font-family: 'Cormorant Garamond', serif; font-size: 4rem;
+  font-weight: 300; color: rgba(184,151,90,0.15); line-height: 1; font-style: italic;
+}
+.portrait-line {
+  position: absolute; top: 0; bottom: 0; width: 1px; left: 50%; transform: translateX(-50%);
+  background: linear-gradient(180deg, transparent, rgba(184,151,90,0.15) 40%, rgba(184,151,90,0.15) 60%, transparent);
+  opacity: 0; transition: opacity 0.4s;
+}
+.team-card:hover .portrait-line { opacity: 1; }
+.team-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; margin-bottom: 0.25rem; }
+.team-role { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+.team-bio { font-size: 0.78rem; line-height: 1.7; color: rgba(245,240,232,0.32); }
+
+/* VALUES */
+.values { background: var(--dark2); padding: 8rem 3.5rem; border-top: 1px solid var(--border); }
+.values-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
+.values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.value-item { padding: 2.5rem; border: 1px solid var(--border); margin: -1px -1px 0 0; transition: background 0.3s; }
+.value-item:hover { background: rgba(184,151,90,0.03); }
+.value-icon {
+  font-family: 'Cormorant Garamond', serif; font-size: 2rem;
+  font-weight: 300; color: var(--gold); margin-bottom: 1rem; font-style: italic; opacity: 0.5;
+}
+.value-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; margin-bottom: 0.6rem; }
+.value-desc { font-size: 0.78rem; line-height: 1.7; color: rgba(245,240,232,0.32); }
+
+/* AWARDS */
+.awards { padding: 8rem 3.5rem; background: var(--dark); border-top: 1px solid var(--border); }
+.awards-inner { display: grid; grid-template-columns: 300px 1fr; gap: 8rem; align-items: start; }
+.award-item {
+  display: grid; grid-template-columns: 80px 1fr auto;
+  align-items: center; gap: 2rem; padding: 1.75rem 0;
+  border-bottom: 1px solid var(--border); transition: padding-left 0.3s;
+}
+.award-item:first-child { border-top: 1px solid var(--border); }
+.award-item:hover { padding-left: 1rem; }
+.award-year { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; color: var(--gold); letter-spacing: 0.1em; }
+.award-name { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 300; margin-bottom: 0.2rem; }
+.award-body { font-size: 0.72rem; color: var(--muted2); letter-spacing: 0.05em; }
+.award-arrow { color: rgba(245,240,232,0.12); font-size: 0.9rem; transition: color 0.3s, transform 0.3s; }
+.award-item:hover .award-arrow { color: var(--gold); transform: translateX(4px); }
+
+/* CTA */
+.cta-strip {
+  background: var(--cream); color: var(--dark); padding: 7rem 3.5rem;
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4rem;
+}
+.cta-strip-title {
+  font-family: 'Cormorant Garamond', serif; font-weight: 300;
+  font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; letter-spacing: -0.02em;
+}
+.cta-strip-title em { font-style: italic; color: var(--gold); }
+.btn-dark {
+  background: var(--dark); color: var(--cream); font-size: 0.72rem;
+  letter-spacing: 0.18em; text-transform: uppercase; padding: 1.1rem 3rem;
+  border: none; cursor: none; font-family: 'Outfit', sans-serif; white-space: nowrap; transition: opacity 0.3s;
+}
+.btn-dark:hover { opacity: 0.8; }
+
+/* FOOTER */
+.footer-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 400;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.25rem 3.5rem; border-top: 1px solid var(--border);
+  background: rgba(15,14,12,0.8); backdrop-filter: blur(10px);
+}
+.footer-loc { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.2); }
+.footer-social { display: flex; gap: 2rem; list-style: none; }
+.footer-social a {
+  font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(245,240,232,0.2); text-decoration: none; transition: color 0.3s;
+}
+.footer-social a:hover { color: var(--gold); }
+
+/* ANIMATIONS */
+.fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.22s; }
+.d3 { transition-delay: 0.34s; } .d4 { transition-delay: 0.46s; }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="index.html" class="logo">Forma</a>
+  <ul class="nav-links">
+    <li><a href="work.html">Work</a></li>
+    <li><a href="studio.html" class="active">Studio</a></li>
+    <li><a href="index.html#s4">Process</a></li>
+    <li><a href="journal.html">Journal</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Begin a project</a>
+</nav>
+
+<!-- HERO -->
+<section class="studio-hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-year">2001</div>
+  <div class="hero-content">
+    <div>
+      <div class="eyebrow fade-up">The studio</div>
+      <h1 class="hero-title fade-up d1">Who<br>we <em>are.</em></h1>
+    </div>
+    <div>
+      <p class="hero-statement fade-up d2">"Architecture is the art of how to waste space beautifully."</p>
+      <p class="hero-body fade-up d3">Forma was founded in Oslo in 2001 by architects Elena Vasquez and Kenji Mori with a single conviction: that buildings should outlast their budgets, their briefs, and their architects. Twenty-four years later, that conviction remains unchanged.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDING -->
+<section class="founding">
+  <div class="founding-geo"></div>
+  <div class="founding-inner">
+    <div>
+      <div class="section-num fade-up">01 / Origin</div>
+      <h2 class="section-title fade-up d1">The founding<br><em>story.</em></h2>
+    </div>
+    <div>
+      <p class="founding-para fade-up"><strong>It began with a warehouse.</strong> In the winter of 2001, Elena Vasquez and Kenji Mori took a lease on a derelict waterfront building in Oslo's Bjørvika district — before the neighbourhood was anything — and turned it into their studio. They had four employees, two commissions, and one rule: never design anything you wouldn't want to live inside.</p>
+      <p class="founding-para fade-up d1">Their first major project, the <strong>Sørenga Cultural Pavilion</strong>, won the Norwegian Architecture Prize in 2004 and established Forma's signature language: restrained material palettes, disciplined geometry, and an almost obsessive attention to how natural light moves through a space across the course of a single day.</p>
+      <p class="founding-para fade-up d2">Today Forma operates from four studios across Oslo, London, Tokyo, and Cape Town. The team of 62 includes architects, urban planners, conservationists, landscape designers, and researchers. The warehouse in Bjørvika is still our home base. The original rule still stands.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stat-block fade-up"><div class="stat-num">24</div><div class="stat-desc">Years in practice</div></div>
+  <div class="stat-block fade-up d1"><div class="stat-num">180<sup>+</sup></div><div class="stat-desc">Projects completed</div></div>
+  <div class="stat-block fade-up d2"><div class="stat-num">62</div><div class="stat-desc">Studio members</div></div>
+  <div class="stat-block fade-up d3"><div class="stat-num">31</div><div class="stat-desc">Countries</div></div>
+</div>
+
+<!-- TEAM -->
+<section class="team">
+  <div class="team-header">
+    <div>
+      <div class="section-num fade-up">02 / People</div>
+      <h2 class="fade-up d1" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.5rem,4vw,4rem);line-height:1.0;letter-spacing:-0.02em;color:var(--cream);">The people behind<br>the <em style="font-style:italic;color:var(--gold2)">work.</em></h2>
+    </div>
+    <div class="team-header-right fade-up d2">Forma is built on the belief that great architecture emerges from diverse minds working toward a shared idea. Our team brings together experience from five continents, twelve disciplines, and three decades of practice.</div>
+  </div>
+  <div class="team-grid">
+    <div class="team-card fade-up">
+      <div class="team-portrait"><div class="portrait-bg p1"></div><div class="portrait-initial">E</div><div class="portrait-line"></div></div>
+      <div class="team-name">Elena Vasquez</div>
+      <div class="team-role">Founding Partner</div>
+      <div class="team-bio">Architect and urbanist. Former professor at the Oslo School of Architecture. Leads civic and cultural projects.</div>
+    </div>
+    <div class="team-card fade-up d1">
+      <div class="team-portrait"><div class="portrait-bg p2"></div><div class="portrait-initial">K</div><div class="portrait-line"></div></div>
+      <div class="team-name">Kenji Mori</div>
+      <div class="team-role">Founding Partner</div>
+      <div class="team-bio">Specialises in structural innovation and material research. Leads the Tokyo studio and Asia-Pacific practice.</div>
+    </div>
+    <div class="team-card fade-up d2">
+      <div class="team-portrait"><div class="portrait-bg p3"></div><div class="portrait-initial">A</div><div class="portrait-line"></div></div>
+      <div class="team-name">Amara Osei</div>
+      <div class="team-role">Design Director</div>
+      <div class="team-bio">Leads interior architecture and spatial identity. Previously at Snøhetta and Adjaye Associates. Cape Town-based.</div>
+    </div>
+    <div class="team-card fade-up d3">
+      <div class="team-portrait"><div class="portrait-bg p4"></div><div class="portrait-initial">L</div><div class="portrait-line"></div></div>
+      <div class="team-name">Lena Bauer</div>
+      <div class="team-role">Heritage Director</div>
+      <div class="team-bio">Conservation architect with 18 years in adaptive reuse across Europe and Southern Africa. London-based.</div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="values-inner">
+    <div>
+      <div class="section-num fade-up">03 / Philosophy</div>
+      <h2 class="fade-up d1" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.5rem,4vw,4rem);line-height:1.0;letter-spacing:-0.02em;color:var(--cream);margin-bottom:1.5rem;">What we<br>believe <em style="font-style:italic;color:var(--gold2)">in.</em></h2>
+      <p class="fade-up d2" style="font-size:0.875rem;line-height:1.9;color:rgba(245,240,232,0.38);">These are not values we invented. They are values we discovered — through difficult projects, honest failures, and the slow accumulation of twenty-four years of practice.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-item fade-up"><div class="value-icon">I</div><div class="value-name">Integrity of material</div><div class="value-desc">We use what a building asks for, not what a budget suggests. Materials are chosen for their honesty, not their convenience.</div></div>
+      <div class="value-item fade-up d1"><div class="value-icon">L</div><div class="value-name">Light as a material</div><div class="value-desc">Natural light is our primary design tool. Every section, every opening, is considered first for how it moves light through a space.</div></div>
+      <div class="value-item fade-up d2"><div class="value-icon">T</div><div class="value-name">Time as a client</div><div class="value-desc">We design for the building's entire lifespan, not its opening. A building that ages badly was never finished to begin with.</div></div>
+      <div class="value-item fade-up d3"><div class="value-icon">P</div><div class="value-name">Place before program</div><div class="value-desc">Every site has a latent identity. Our role is to find it and amplify it — not to override it with a preconceived idea.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="awards">
+  <div class="awards-inner">
+    <div>
+      <div class="section-num fade-up">04 / Recognition</div>
+      <h2 class="fade-up d1" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.0;letter-spacing:-0.02em;color:var(--cream);">Awards &amp;<br><em style="font-style:italic;color:var(--gold2)">recognition.</em></h2>
+    </div>
+    <div>
+      <div class="award-item fade-up"><div class="award-year">2024</div><div><div class="award-name">World Architecture Festival — Building of the Year</div><div class="award-body">The Meridian Tower, Oslo</div></div><div class="award-arrow">→</div></div>
+      <div class="award-item fade-up d1"><div class="award-year">2023</div><div><div class="award-name">RIBA International Prize — Shortlist</div><div class="award-body">Nakamura Cultural District, Tokyo</div></div><div class="award-arrow">→</div></div>
+      <div class="award-item fade-up d2"><div class="award-year">2022</div><div><div class="award-name">Aga Khan Award for Architecture</div><div class="award-body">The Granary Restoration, Cape Town</div></div><div class="award-arrow">→</div></div>
+      <div class="award-item fade-up d2"><div class="award-year">2019</div><div><div class="award-name">EU Prize for Contemporary Architecture</div><div class="award-body">Palazzo Vecchi Conversion, Florence</div></div><div class="award-arrow">→</div></div>
+      <div class="award-item fade-up d3"><div class="award-year">2004</div><div><div class="award-name">Norwegian Architecture Prize</div><div class="award-body">Sørenga Cultural Pavilion, Oslo</div></div><div class="award-arrow">→</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <h2 class="cta-strip-title fade-up">Ready to begin<br>something <em>lasting?</em></h2>
+  <button class="btn-dark fade-up d1">Start a conversation →</button>
+</div>
+
+<div class="footer-bar">
+  <div class="footer-loc">Oslo · London · Tokyo · Cape Town</div>
+  <ul class="footer-social">
+    <li><a href="journal.html">Journal</a></li>
+    <li><a href="sustainability.html">Sustainability</a></li>
+    <li><a href="404-v2.html">LinkedIn</a></li>
+  </ul>
+</div>
+
+<script>
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove', e => {
+  mx=e.clientX; my=e.clientY;
+  cursor.style.left=mx+'px'; cursor.style.top=my+'px';
+});
+function animateCursor() {
+  rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12;
+  ring.style.left=rx+'px'; ring.style.top=ry+'px';
+  requestAnimationFrame(animateCursor);
+}
+animateCursor();
+document.querySelectorAll('a,button,.team-card,.award-item,.value-item').forEach(el => {
+  el.addEventListener('mouseenter',()=>{ cursor.style.width='14px'; cursor.style.height='14px'; ring.style.width='52px'; ring.style.height='52px'; });
+  el.addEventListener('mouseleave',()=>{ cursor.style.width='8px'; cursor.style.height='8px'; ring.style.width='36px'; ring.style.height='36px'; });
+});
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+setTimeout(() => document.querySelectorAll('.studio-hero .fade-up').forEach(el => el.classList.add('visible')), 100);
+</script>
+</body>
+</html>

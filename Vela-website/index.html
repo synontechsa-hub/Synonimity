@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vela — Future-Proof Your Wealth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- GLO BACKDROPS (For Glassmorphism) -->
+    <div class="glow-bg">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+    </div>
+
+    <nav>
+        <div class="logo"><a href="index.html">VELA<span>.</span></a></div>
+        <ul class="nav-links">
+            <li><a href="markets.html">Markets</a></li>
+            <li><a href="security.html">Security</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle">🌙</button>
+            <a href="404.html" class="btn-text">Log In</a>
+            <a href="404.html" class="btn-primary">Join Vela</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <a href="markets.html">Markets</a>
+        <a href="security.html">Security</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="404.html">Log In</a>
+        <a href="404.html" class="btn-primary">Join Vela</a>
+    </div>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="badge">Trusted by 50,000+ South Africans</div>
+                <h1>Invest in the<br>future of you.</h1>
+                <p>Simple, secure wealth management. Buy, sell, and store your digital assets with the platform built for growth.</p>
+                <div class="hero-btns">
+                    <a href="#" class="btn-primary">Sign Up for Free</a>
+                    <a href="#" class="btn-secondary">Explore Assets</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- DASHBOARD PREVIEW -->
+        <section id="dashboard" class="dashboard-preview">
+            <div class="glass-card main-dashboard">
+                <div class="dashboard-header">
+                    <div class="balance-info">
+                        <span>Total Portfolio Value</span>
+                        <h2>R 142,500.42 <span class="trend-up">↑ 12.4%</span></h2>
+                    </div>
+                    <div class="timeframe-selector">
+                        <button class="active" data-timeframe="1W">1W</button>
+                        <button data-timeframe="1M">1M</button>
+                        <button data-timeframe="1Y">1Y</button>
+                        <button data-timeframe="ALL">ALL</button>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="portfolioChart"></canvas>
+                </div>
+                <div style="margin-bottom: 1.5rem; display: flex; align-items: center;">
+                    <h3 style="font-size: 1.1rem;">Your Assets</h3>
+                    <span id="price-status" style="color: var(--success-green);">
+                        <span class="status-dot"></span> Live
+                    </span>
+                </div>
+                <div class="asset-grid">
+                    <div class="asset-item">
+                        <div class="asset-icon btc">B</div>
+                        <div class="asset-details">
+                            <h4>Bitcoin</h4>
+                            <p>0.42 BTC</p>
+                        </div>
+                        <div class="asset-value" id="price-btc">R 1,200,000</div>
+                    </div>
+                    <div class="asset-item">
+                        <div class="asset-icon eth">E</div>
+                        <div class="asset-details">
+                            <h4>Ethereum</h4>
+                            <p>4.21 ETH</p>
+                        </div>
+                        <div class="asset-value" id="price-eth">R 45,000</div>
+                    </div>
+                    <div class="asset-item">
+                        <div class="asset-icon gold">G</div>
+                        <div class="asset-details">
+                            <h4>Spot Gold</h4>
+                            <p>12.5 oz</p>
+                        </div>
+                        <div class="asset-value">R 380,000</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section id="features" class="features">
+            <div class="section-tag">Features</div>
+            <h2>Smart tools for <span class="text-gradient">serious growth.</span></h2>
+
+            <div class="feature-grid">
+                <div class="glass-card feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Deposits</h3>
+                    <p>Move your ZAR into the markets in seconds with automated bank sync.</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Bank-Grade Security</h3>
+                    <p>AES-256 encryption and multi-sig cold storage for all your digital assets.</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Auto-Rebalancing</h3>
+                    <p>Our algorithm keeps your portfolio at your target risk level automatically.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="color:white">VELA<span>.</span></div>
+            <p>Vela Financial is a registered FSP in South Africa.</p>
+            <div class="footer-bottom">
+                &copy; 2024 Vela. All rights reserved.
+                <div class="links" style="display:flex; gap: 2rem;">
+                    <a href="security.html" style="color: rgba(255,255,255,0.4)">Security</a>
+                    <a href="pricing.html" style="color: rgba(255,255,255,0.4)">Pricing</a>
+                    <a href="404.html" style="color: rgba(255,255,255,0.4)">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

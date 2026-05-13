@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing — Vela</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- GLO BACKDROPS -->
+    <div class="glow-bg">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+    </div>
+
+    <nav>
+        <div class="logo"><a href="index.html">VELA<span>.</span></a></div>
+        <ul class="nav-links">
+            <li><a href="markets.html">Markets</a></li>
+            <li><a href="security.html">Security</a></li>
+            <li><a href="pricing.html" class="active">Pricing</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle">🌙</button>
+            <a href="404.html" class="btn-text">Log In</a>
+            <a href="404.html" class="btn-primary">Get Started</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <a href="markets.html">Markets</a>
+        <a href="security.html">Security</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="404.html">Log In</a>
+        <a href="404.html" class="btn-primary">Get Started</a>
+    </div>
+
+    <main>
+        <section class="hero pricing-hero">
+            <h1>Transparent pricing.<br>No hidden fees.</h1>
+            <p>Choose the plan that fits your investment style.</p>
+        </section>
+
+        <section class="pricing-section">
+            <div class="feature-grid" style="align-items: stretch;">
+                <!-- Basic -->
+                <div class="glass-card plan-card">
+                    <h3 style="margin-bottom: 0.5rem;">Vela Starter</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 2rem;">For individual investors getting started.</p>
+                    <div class="plan-price">Free</div>
+                    <ul class="plan-features">
+                        <li>✓ 0.5% Trading Fee</li>
+                        <li>✓ Standard Security</li>
+                        <li>✓ Email Support</li>
+                        <li class="unavailable">× Priority Deposits</li>
+                    </ul>
+                    <a href="404.html" class="btn-secondary" style="text-align: center;">Get Started</a>
+                </div>
+                <!-- Pro -->
+                <div class="glass-card plan-card featured">
+                    <div class="plan-badge">Most Popular</div>
+                    <h3 style="margin-bottom: 0.5rem;">Vela Pro</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 2rem;">For serious wealth builders.</p>
+                    <div class="plan-price">R 299 <span style="font-size: 1rem; color: var(--text-muted); font-weight: 500;">/mo</span></div>
+                    <ul class="plan-features">
+                        <li>✓ 0.1% Trading Fee</li>
+                        <li>✓ Advanced Security (2FA+)</li>
+                        <li>✓ 24/7 Priority Support</li>
+                        <li>✓ Instant Deposits</li>
+                    </ul>
+                    <a href="404.html" class="btn-primary" style="text-align: center;">Go Pro</a>
+                </div>
+                <!-- Private -->
+                <div class="glass-card plan-card">
+                    <h3 style="margin-bottom: 0.5rem;">Vela Private</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 2rem;">Institutional grade management.</p>
+                    <div class="plan-price">Custom</div>
+                    <ul class="plan-features">
+                        <li>✓ Custom Fee Tiers</li>
+                        <li>✓ Dedicated Manager</li>
+                        <li>✓ API Integration</li>
+                        <li>✓ OTC Trading Desk</li>
+                    </ul>
+                    <a href="404.html" class="btn-secondary" style="text-align: center;">Contact Sales</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="color:white">VELA<span>.</span></div>
+            <p>Vela Financial is a registered FSP in South Africa.</p>
+            <div class="footer-bottom">
+                &copy; 2024 Vela. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

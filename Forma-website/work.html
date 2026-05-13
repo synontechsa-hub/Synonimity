@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — Forma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="forma-styles.css">
+<style>
+/* Page-specific overrides for Work Gallery */
+html { scroll-snap-type: none; }
+body { height: auto; cursor: none; overflow-x: hidden; }
+
+/* PAGE HEADER */
+.page-header {
+  padding: 10rem 3.5rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: flex-end;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.page-eyebrow::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+
+.page-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+.page-title em { font-style: italic; color: var(--gold2); }
+
+.header-desc {
+  font-size: 0.9rem;
+  color: rgba(245,240,232,0.45);
+  line-height: 1.9;
+  max-width: 380px;
+  margin-bottom: 2rem;
+}
+
+.project-count {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--muted2);
+}
+.project-count span {
+  font-size: 2rem;
+  color: var(--cream);
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  line-height: 1;
+}
+
+/* FILTER BAR */
+.filter-bar {
+  padding: 2rem 3.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15,14,12,0.95);
+  backdrop-filter: blur(20px);
+}
+
+.filter-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-right: 1rem;
+}
+
+.filter-btn {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.4);
+  background: none;
+  border: 1px solid rgba(245,240,232,0.08);
+  padding: 0.5rem 1.25rem;
+  cursor: none;
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.3s;
+}
+.filter-btn:hover { color: var(--cream); border-color: rgba(245,240,232,0.2); }
+.filter-btn.active { background: var(--gold); color: var(--dark); border-color: var(--gold); }
+
+/* GALLERY */
+.gallery { padding: 3rem 3.5rem 8rem; }
+.gallery-featured { display: grid; grid-template-columns: 1.6fr 1fr; gap: 1.5px; margin-bottom: 1.5px; background: var(--border); }
+.gallery-row { display: grid; gap: 1.5px; margin-bottom: 1.5px; background: var(--border); }
+.gallery-row.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.gallery-row.cols-2 { grid-template-columns: 1fr 1fr; }
+.gallery-row.cols-2-skew { grid-template-columns: 1fr 1.5fr; }
+
+/* PROJECT CARD */
+.project-card { position: relative; overflow: hidden; background: var(--dark2); cursor: none; }
+.project-card.tall { min-height: 520px; }
+.project-card.medium { min-height: 360px; }
+
+.project-bg { position: absolute; inset: 0; transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94); }
+.project-card:hover .project-bg { transform: scale(1.05); }
+
+/* Unique images */
+.bg-1 { background-image: url('https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=2000'); background-size: cover; background-position: center; }
+.bg-2 { background-image: url('https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=2000'); background-size: cover; background-position: center; }
+.bg-3 { background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=2000'); background-size: cover; background-position: center; }
+.bg-4 { background-image: url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2000'); background-size: cover; background-position: center; }
+.bg-5 { background-image: url('https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?q=80&w=2000'); background-size: cover; background-position: center; }
+.bg-6 { background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2000'); background-size: cover; background-position: center; }
+.bg-7 { background-image: url('https://images.unsplash.com/photo-1503387762-592cd58cd4fb?q=80&w=2000'); background-size: cover; background-position: center; }
+.bg-8 { background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000'); background-size: cover; background-position: center; }
+.bg-9 { background-image: url('https://images.unsplash.com/photo-1525874684015-58379d421a52?q=80&w=2000'); background-size: cover; background-position: center; }
+.bg-10 { background-image: url('https://images.unsplash.com/photo-1515362778563-6a8d0e44bc0b?q=80&w=2000'); background-size: cover; background-position: center; }
+.bg-11 { background-image: url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=2000'); background-size: cover; background-position: center; }
+.bg-12 { background-image: url('https://images.unsplash.com/photo-1449156001933-468b7b25e54c?q=80&w=2000'); background-size: cover; background-position: center; }
+
+.project-bg::after { content: ''; position: absolute; inset: 0; background: rgba(15, 14, 12, 0.2); transition: background 0.3s; }
+.project-card:hover .project-bg::after { background: rgba(15, 14, 12, 0.1); }
+
+.project-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(10,9,8,0.92) 100%); opacity: 0; transition: opacity 0.5s; }
+.project-card:hover .project-overlay { opacity: 1; }
+
+.project-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; transform: translateY(8px); transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94); }
+.project-card:hover .project-info { transform: translateY(0); }
+
+.project-cat { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; opacity: 0; transition: all 0.4s 0.05s; }
+.project-card:hover .project-cat { opacity: 1; }
+
+.project-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--cream); margin-bottom: 0.4rem; opacity: 0; transition: all 0.4s 0.1s; }
+.project-card:hover .project-name { opacity: 1; }
+
+.project-meta { font-size: 0.72rem; color: rgba(245,240,232,0.4); opacity: 0; transition: all 0.4s 0.15s; display: flex; align-items: center; gap: 1rem; }
+.project-card:hover .project-meta { opacity: 1; }
+
+.card-index { position: absolute; top: 1.5rem; left: 1.5rem; font-family: 'Cormorant Garamond', serif; font-size: 0.75rem; color: rgba(245,240,232,0.2); }
+.card-year { position: absolute; top: 1.5rem; right: 1.5rem; font-family: 'Cormorant Garamond', serif; font-size: 0.72rem; color: rgba(245,240,232,0.15); }
+
+@media (max-width: 768px) {
+  .page-header { grid-template-columns: 1fr; padding: 8rem 1.5rem 3rem; gap: 2rem; }
+  .filter-bar { padding: 1rem 1.5rem; top: 0; overflow-x: auto; flex-wrap: nowrap; white-space: nowrap; }
+  .gallery { padding: 1.5rem; }
+  .gallery-featured, .gallery-row { grid-template-columns: 1fr !important; }
+  .project-card.tall { min-height: 400px; }
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="index.html" class="logo">Forma</a>
+  <button class="nav-hamburger" id="navHamburger">☰</button>
+  <ul class="nav-links">
+    <li><a href="work.html" class="active">Work</a></li>
+    <li><a href="studio.html">Studio</a></li>
+    <li><a href="index.html#s5">Process</a></li>
+    <li><a href="journal.html">Journal</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Begin a project</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="header-left">
+    <div class="page-eyebrow fade-up">Selected projects</div>
+    <h1 class="page-title fade-up d1">Our<br><em>work.</em></h1>
+  </div>
+  <div class="header-right fade-up d2">
+    <p class="header-desc">
+      Twenty-four years of practice across five continents. Each project a conversation between client ambition and spatial possibility.
+    </p>
+    <div class="project-count">
+      <span id="visibleCount">12</span> projects shown
+    </div>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <span class="filter-label">Filter</span>
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="architectural">Architectural</button>
+  <button class="filter-btn" data-filter="interior">Interior</button>
+  <button class="filter-btn" data-filter="masterplanning">Master Planning</button>
+  <button class="filter-btn" data-filter="heritage">Heritage</button>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery">
+  <div class="gallery-featured fade-up">
+    <div class="project-card tall bg-1" data-category="architectural">
+      <div class="project-bg"></div>
+      <div class="card-index">01</div>
+      <div class="card-year">2023</div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+        <div class="project-cat">Architectural Design</div>
+        <div class="project-name">The Meridian Tower</div>
+        <div class="project-meta">Oslo, Norway</div>
+      </div>
+    </div>
+    <div class="project-card tall bg-2" data-category="interior">
+      <div class="project-bg"></div>
+      <div class="card-index">02</div>
+      <div class="card-year">2022</div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+        <div class="project-cat">Interior Architecture</div>
+        <div class="project-name">Ashford Private Members Club</div>
+        <div class="project-meta">London, UK</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-row cols-3 fade-up d1">
+    <div class="project-card medium bg-3" data-category="masterplanning">
+      <div class="project-bg"></div>
+      <div class="card-index">03</div>
+      <div class="project-info">
+        <div class="project-cat">Master Planning</div>
+        <div class="project-name">Nakamura Cultural District</div>
+      </div>
+    </div>
+    <div class="project-card medium bg-4" data-category="architectural">
+      <div class="project-bg"></div>
+      <div class="card-index">04</div>
+      <div class="project-info">
+        <div class="project-cat">Architectural Design</div>
+        <div class="project-name">Lakeshore Pavilion</div>
+      </div>
+    </div>
+    <div class="project-card medium bg-5" data-category="heritage">
+      <div class="project-bg"></div>
+      <div class="card-index">05</div>
+      <div class="project-info">
+        <div class="project-cat">Heritage Conservation</div>
+        <div class="project-name">The Granary Restoration</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-bar">
+  <div class="footer-loc">Oslo · London · Tokyo · Cape Town</div>
+  <ul class="footer-social" style="display:flex; gap:2rem; list-style:none;">
+    <li><a href="journal.html" style="font-size:0.65rem; text-decoration:none; color:rgba(245,240,232,0.3);">Journal</a></li>
+    <li><a href="sustainability.html" style="font-size:0.65rem; text-decoration:none; color:rgba(245,240,232,0.3);">Sustainability</a></li>
+  </ul>
+</div>
+
+<script src="forma-script.js"></script>
+<script>
+// Filter Logic
+const filterBtns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.project-card');
+const countEl = document.getElementById('visibleCount');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    let visible = 0;
+    cards.forEach(card => {
+      const match = filter === 'all' || card.dataset.category === filter;
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    countEl.textContent = visible;
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Wit Not Found</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #ffcc00;
+            text-align: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 7rem;
+            margin: 0;
+            text-shadow: 0 0 15px #ffcc00;
+            animation: glitch 1s infinite alternate;
+        }
+        .emoji { font-size: 4.5rem; margin-bottom: 10px; }
+        p { font-size: 1.6rem; max-width: 620px; opacity: 0.9; }
+        .btn {
+            margin-top: 40px;
+            padding: 14px 32px;
+            background: #ffcc00;
+            color: #0a0a0a;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 1.25rem;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: #ffe066;
+            transform: translateY(-3px);
+        }
+        @keyframes glitch {
+            0% { text-shadow: 0 0 10px #ffcc00; }
+            20% { text-shadow: 2px 2px 0 #ff00ff, -2px -2px 0 #00ffff; }
+        }
+        #cursor-glow {
+            position: fixed;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255, 204, 0, 0.08) 0%, rgba(255, 204, 0, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="emoji">🤖☕</div>
+    <h1>404</h1>
+    <p><strong>Wit Not Found</strong><br>
+        The page you were looking for has entered an existential crisis.<br>
+        My sarcasm module is working overtime though.</p>
+
+    <a href="/" class="btn">Return to Base</a>
+
+    <p style="margin-top: 60px; font-size: 1rem; opacity: 0.6;">
+        Pro tip: This is what happens when the Idiot Operator forgets to deploy the route again.
+    </p>
+
+    <div id="cursor-glow"></div>
+
+    <script>
+        const glow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+    </script>
+</body>
+</html>

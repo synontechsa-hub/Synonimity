@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal — Forma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="forma-styles.css">
+    <style>
+        .journal-header {
+            padding: 10rem 3.5rem 4rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .journal-grid {
+            padding: 4rem 3.5rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+        .journal-card {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .journal-img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(0.5);
+            transition: all 0.5s ease;
+        }
+        .journal-card:hover .journal-img {
+            filter: grayscale(0);
+            transform: translateY(-10px);
+        }
+        .journal-meta {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+        .journal-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+        .journal-excerpt {
+            font-size: 0.85rem;
+            color: rgba(245,240,232,0.4);
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <nav>
+        <a href="index.html" class="logo">Forma</a>
+        <ul class="nav-links">
+            <li><a href="work.html">Work</a></li>
+            <li><a href="studio.html">Studio</a></li>
+            <li><a href="index.html#s4">Process</a></li>
+            <li><a href="journal.html" class="active">Journal</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta">Begin a project</a>
+    </nav>
+
+    <header class="journal-header">
+        <div class="eyebrow fade-up">Insights & Research</div>
+        <h1 class="hero-title fade-up d1">The <em>Journal.</em></h1>
+    </header>
+
+    <main class="journal-grid">
+        <a href="#" class="journal-card fade-up">
+            <div class="journal-img" style="background-image: url('https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=800&q=80')"></div>
+            <div class="journal-meta">Research • Jan 2025</div>
+            <h2 class="journal-title">The Light of the North: Designing for Oslo's Winters</h2>
+            <p class="journal-excerpt">An exploration of how we use reflective surfaces and disciplined geometry to amplify limited natural light during the winter months.</p>
+        </a>
+
+        <a href="#" class="journal-card fade-up d1">
+            <div class="journal-img" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80')"></div>
+            <div class="journal-meta">Manifesto • Dec 2024</div>
+            <h2 class="journal-title">Adaptive Reuse: The Greenest Building is Already Built</h2>
+            <p class="journal-excerpt">Why preserving heritage isn't just a cultural choice—it's the most significant environmental decision an architect can make.</p>
+        </a>
+
+        <a href="#" class="journal-card fade-up d2">
+            <div class="journal-img" style="background-image: url('https://images.unsplash.com/photo-1503387762-592931295223?w=800&q=80')"></div>
+            <div class="journal-meta">Process • Nov 2024</div>
+            <h2 class="journal-title">Material Honesty: Why we choose concrete and glass</h2>
+            <p class="journal-excerpt">A deep dive into our studio's signature material palette and the structural logic that governs our selection process.</p>
+        </a>
+    </main>
+
+    <footer class="footer-bar" style="position: relative; margin-top: 4rem;">
+        <div class="footer-loc">Oslo · London · Tokyo · Cape Town</div>
+        <ul class="footer-links" style="display:flex; gap:2rem; list-style:none;">
+            <li><a href="#" style="font-size:0.65rem; color:rgba(245,240,232,0.25); text-decoration:none;">Instagram</a></li>
+            <li><a href="#" style="font-size:0.65rem; color:rgba(245,240,232,0.25); text-decoration:none;">LinkedIn</a></li>
+        </ul>
+    </footer>
+
+    <script src="forma-script.js"></script>
+</body>
+</html>

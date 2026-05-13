@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solstice — Conscious Goods for Modern Living</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Header/Navigation -->
+    <header>
+        <nav>
+            <div class="nav-left">
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="#story" class="nav-link">Story</a>
+            </div>
+            <div class="logo">
+                <a href="index.html">SOLSTICE</a>
+            </div>
+            <div class="nav-right">
+                <a href="404.html" class="nav-link">Search</a>
+                <a href="#" class="nav-link cart-trigger">Cart (0)</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-menu">
+        <a href="shop.html" class="mobile-link">Shop</a>
+        <a href="#story" class="mobile-link">Story</a>
+        <a href="404.html" class="mobile-link">Search</a>
+        <a href="#" class="mobile-link cart-trigger">Cart (0)</a>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content reveal">
+                <span class="eyebrow">Edition 01 — The Grounding Collection</span>
+                <h1>Utility meeting<br>the <em>natural world.</em></h1>
+                <p>Curated essentials designed for longevity, crafted from earth's finest sustainable materials.</p>
+                <div class="hero-actions">
+                    <a href="shop.html" class="btn-primary">Shop Collection</a>
+                    <a href="#story" class="btn-secondary">Our Philosophy</a>
+                </div>
+            </div>
+            <div class="hero-image reveal">
+                <div class="image-inner">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200" alt="Minimalist Interior">
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Props -->
+        <section class="values reveal">
+            <div class="value-item">
+                <span class="value-num">01</span>
+                <h3>Organic Materials</h3>
+                <p>Certified GOTS cotton and sustainably harvested timber from managed forests.</p>
+            </div>
+            <div class="value-item">
+                <span class="value-num">02</span>
+                <h3>Handcrafted</h3>
+                <p>Working with independent artisans to preserve traditional craftsmanship techniques.</p>
+            </div>
+            <div class="value-item">
+                <span class="value-num">03</span>
+                <h3>Carbon Neutral</h3>
+                <p>We offset 100% of our carbon footprint, from production to your front door.</p>
+            </div>
+        </section>
+
+        <!-- Featured Products Grid -->
+        <section id="shop" class="featured-products">
+            <div class="section-header reveal">
+                <h2>Featured Essentials</h2>
+                <a href="shop.html" class="view-all">View all</a>
+            </div>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card reveal">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&q=80&w=800" alt="Terra Cotta Vessel">
+                        <button class="quick-add" data-id="1" data-name="Terra Cotta Vessel" data-price="850" data-img="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&q=80&w=800">+ Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Terra Cotta Vessel</h3>
+                        <p class="price">R 850.00</p>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card reveal">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800" alt="Organic Hemp Tote">
+                        <button class="quick-add" data-id="2" data-name="Organic Hemp Tote" data-price="550" data-img="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800">+ Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Organic Hemp Tote</h3>
+                        <p class="price">R 550.00</p>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card reveal">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&q=80&w=800" alt="Recycled Wool Throw">
+                        <button class="quick-add" data-id="3" data-name="Recycled Wool Throw" data-price="2100" data-img="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&q=80&w=800">+ Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Recycled Wool Throw</h3>
+                        <p class="price">R 2,100.00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section id="story" class="story-section">
+            <div class="story-image reveal">
+                <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=1200" alt="Workshop">
+            </div>
+            <div class="story-content reveal">
+                <span class="eyebrow">Our Story</span>
+                <h2>Made to be <em>passed down.</em></h2>
+                <p>Solstice was born from a simple observation: we are surrounded by things, but connected to very few. We create objects that age with grace, telling the story of the home they inhabit.</p>
+                <a href="404.html" class="btn-secondary">Read the Journal</a>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter reveal">
+            <div class="newsletter-inner">
+                <h2>Join the circle</h2>
+                <p>Early access to new collections and stories from our artisans.</p>
+                <form class="newsletter-form">
+                    <label for="email-input" class="sr-only">Email address</label>
+                    <input type="email" id="email-input" placeholder="Email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <div class="newsletter-confirmation">
+                    <p>You're in. Welcome to the circle.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Drawer -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-msg">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cartTotalValue">R 0.00</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo">SOLSTICE</div>
+                <p>Conscious goods for the modern home.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <a href="404.html">New Arrivals</a>
+                <a href="404.html">Best Sellers</a>
+                <a href="404.html">Home Goods</a>
+                <a href="404.html">Textiles</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="about.html">About Us</a>
+                <a href="sustainability.html">Sustainability</a>
+                <a href="404.html">Journal</a>
+                <a href="404.html">Careers</a>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <a href="404.html">Shipping</a>
+                <a href="404.html">Returns</a>
+                <a href="contact.html">Contact</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Solstice. Built by SynonTech.</p>
+            <div class="social-links">
+                <a href="404.html">Instagram</a>
+                <a href="404.html">Pinterest</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
