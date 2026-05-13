@@ -104,14 +104,15 @@ nav.scrolled {
     font-weight: 400;
     opacity: 0.9;
 }
-.hero-socials { display: flex; gap: 1.5rem; margin-bottom: 3rem; }
+.hero-socials { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 3rem; }
+.social-group { display: flex; gap: 1.5rem; }
+.social-divider { width: 1px; height: 16px; background: var(--border); }
 .hero-socials a {
-    font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase;
-    letter-spacing: 0.1em; color: var(--text-light); text-decoration: none;
-    transition: color 0.2s;
+    font-size: 1.25rem; color: var(--text-light); text-decoration: none;
+    transition: all 0.2s; display: flex; align-items: center;
 }
-.hero-socials a:hover { color: var(--accent); }
-.hero-actions { display: flex; gap: 1rem; }
+.hero-socials a:hover { color: var(--accent); transform: translateY(-2px); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
 
 /* BUTTONS */
 .btn-primary, .btn-secondary {
@@ -166,9 +167,19 @@ nav.scrolled {
 /* ABOUT */
 .about-flex { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center; }
 .about-text p { margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-main); }
-.skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; }
-.skill-group h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.5rem; }
-.skill-group p { font-size: 0.9rem; margin-bottom: 0; font-weight: 500; }
+.skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; margin-top: 3rem; }
+.skill-group h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 1rem; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.skill-tags span {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-main);
+    background: var(--bg-grey);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    white-space: nowrap;
+}
 
 .about-stat { display: flex; flex-direction: column; gap: 1.5rem; }
 .stat-card { background: #fff; border: 1px solid var(--border); padding: 2.5rem; border-radius: 12px; text-align: center; }
@@ -189,4 +200,6 @@ footer { padding: 80px 0 40px; border-top: 1px solid var(--border); }
     .about-flex { grid-template-columns: 1fr; }
     .hero h1 { font-size: 2.5rem; }
     .nav-links { display: none; }
+    .hero-actions { flex-direction: column; }
+    .hero-actions a { text-align: center; width: 100%; }
 }
