@@ -246,15 +246,25 @@ nav.scrolled {
 .featured-project {
     background: var(--primary);
     border-radius: 24px;
-    padding: 4rem;
+    padding: 5rem 4rem;
     color: #fff;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.featured-project::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 40%; height: 100%;
+    background: radial-gradient(circle at 100% 50%, rgba(59, 130, 246, 0.1), transparent 70%);
+    pointer-events: none;
 }
 
 .linker-container {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1.1fr 0.9fr;
     gap: 4rem;
     align-items: center;
     position: relative;
@@ -269,17 +279,8 @@ nav.scrolled {
 }
 
 .linker-brand img {
-    height: 40px;
-    filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
-}
-
-.linker-brand span {
-    font-family: var(--font-mono);
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    color: var(--accent);
+    height: 50px;
+    filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.3));
 }
 
 .linker-content h2 {
@@ -298,20 +299,22 @@ nav.scrolled {
 .linker-features {
     list-style: none;
     display: grid;
-    gap: 1rem;
-    margin-bottom: 3rem;
+    gap: 1.2rem;
+    margin-bottom: 3.5rem;
 }
 
 .linker-features li {
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .linker-features i {
     color: var(--accent);
-    width: 20px;
+    width: 24px;
+    font-size: 1.1rem;
 }
 
 .linker-cta {
@@ -320,56 +323,79 @@ nav.scrolled {
     gap: 2rem;
 }
 
+.featured-project .btn-secondary {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.featured-project .btn-secondary:hover {
+    border-color: var(--accent);
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent);
+}
+
 .status-tag {
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--accent);
-    padding: 0.4rem 0.8rem;
+    padding: 0.5rem 1rem;
     border: 1px solid var(--accent);
     border-radius: 100px;
+    background: rgba(59, 130, 246, 0.05);
 }
 
 .linker-visual {
-    height: 300px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
+    perspective: 1000px;
 }
 
 /* NEURAL NETWORK ANIMATION */
 .neural-network {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: rotate3d 20s linear infinite;
+}
+
+@keyframes rotate3d {
+    from { transform: rotateY(0deg) rotateX(10deg); }
+    to { transform: rotateY(360deg) rotateX(10deg); }
 }
 
 .node {
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     background: var(--accent);
     border-radius: 50%;
-    box-shadow: 0 0 20px var(--accent);
+    box-shadow: 0 0 15px var(--accent), 0 0 30px var(--accent);
 }
 
 .n1 { top: 20%; left: 20%; animation: pulse 2s infinite; }
 .n2 { top: 80%; left: 30%; animation: pulse 2s infinite 0.5s; }
 .n3 { top: 50%; right: 10%; animation: pulse 2s infinite 1s; }
+.n4 { top: 10%; right: 30%; animation: pulse 2s infinite 1.5s; }
+.n5 { top: 90%; right: 20%; animation: pulse 2s infinite 0.2s; }
 
 .line {
     position: absolute;
     background: linear-gradient(90deg, var(--accent), transparent);
     height: 1px;
     transform-origin: left center;
-    opacity: 0.3;
+    opacity: 0.2;
 }
 
-.l1 { top: 23%; left: 23%; width: 120px; transform: rotate(30deg); animation: lineFlow 3s infinite; }
-.l2 { top: 83%; left: 33%; width: 100px; transform: rotate(-35deg); animation: lineFlow 3s infinite 1s; }
+.l1 { top: 22%; left: 22%; width: 140px; transform: rotate(35deg); }
+.l2 { top: 82%; left: 32%; width: 120px; transform: rotate(-40deg); }
+.l3 { top: 52%; right: 12%; width: 100px; transform: rotate(180deg); }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.5); opacity: 1; box-shadow: 0 0 30px var(--accent); }
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.4); opacity: 1; box-shadow: 0 0 40px var(--accent); }
 }
 
 @keyframes lineFlow {
