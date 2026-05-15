@@ -155,15 +155,29 @@ nav.scrolled {
     background: linear-gradient(135deg, #00f3ff, #39ff14, #00f3ff);
     background-size: 300% 300%;
     animation: neonGradient 6s ease infinite;
+    color: #fff !important;
 }
 
 .neon-card .project-image {
-    background-color: #000; /* Dark background to make the neon image pop */
+    background-color: #000;
 }
 
 .neon-card .project-info {
-    background-color: #fff;
+    background-color: #0a0a0a; /* Deep dark to match the image */
+    border-top: 1px solid rgba(0, 243, 255, 0.1);
 }
+
+.neon-card h3 { color: #fff; }
+.neon-card .p-category { color: #00f3ff; }
+.neon-card p { color: rgba(255, 255, 255, 0.7) !important; }
+
+.neon-card .linker-badge {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.neon-card .linker-badge span { color: rgba(255, 255, 255, 0.5); }
 
 .neon-card:hover {
     box-shadow: 0 0 30px rgba(0, 243, 255, 0.6), 0 0 60px rgba(57, 255, 20, 0.4) !important;
