@@ -126,4 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => el.classList.add('visible'), 100 + (i * 100));
         });
     }
+
+    // --- DYNAMIC YEAR ---
+    const yearElements = document.querySelectorAll('.year');
+    yearElements.forEach(el => el.textContent = new Date().getFullYear());
 });

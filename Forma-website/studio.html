@@ -398,13 +398,19 @@ nav {
   <button class="btn-dark fade-up d1">Start a conversation →</button>
 </div>
 
-<div class="footer-bar">
-  <div class="footer-loc">Oslo · London · Tokyo · Cape Town</div>
-  <ul class="footer-social">
-    <li><a href="journal.html">Journal</a></li>
-    <li><a href="sustainability.html">Sustainability</a></li>
-    <li><a href="404-v2.html">LinkedIn</a></li>
-  </ul>
+<div class="footer-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 3.5rem; border-top: 1px solid var(--border); background: rgba(15,14,12,0.8); backdrop-filter: blur(10px);">
+  <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+    <div class="footer-loc" style="font-size: 0.65rem; color: rgba(245,240,232,0.5);">Oslo · London · Tokyo · Cape Town</div>
+    <div style="font-size: 0.6rem; color: rgba(245,240,232,0.2);">&copy; <span class="year"></span> Forma Studio. All rights reserved.</div>
+  </div>
+  <div style="display: flex; align-items: center; gap: 2rem;">
+    <img src="../assets/Powered_by_dark_background.png" alt="Powered by SynonTech" style="height: 44px; width: auto; opacity: 0.4;">
+    <ul class="footer-social" style="display:flex; gap:2rem; list-style:none; margin: 0;">
+      <li><a href="journal.html">Journal</a></li>
+      <li><a href="sustainability.html">Sustainability</a></li>
+      <li><a href="404-v2.html">LinkedIn</a></li>
+    </ul>
+  </div>
 </div>
 
 <script>
@@ -430,6 +436,10 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 setTimeout(() => document.querySelectorAll('.studio-hero .fade-up').forEach(el => el.classList.add('visible')), 100);
+
+// --- DYNAMIC YEAR ---
+const yearElements = document.querySelectorAll('.year');
+yearElements.forEach(el => el.textContent = new Date().getFullYear());
 </script>
 </body>
 </html>

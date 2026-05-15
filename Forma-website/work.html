@@ -261,12 +261,18 @@ body { height: auto; cursor: none; overflow-x: hidden; }
   </div>
 </div>
 
-<div class="footer-bar">
-  <div class="footer-loc">Oslo · London · Tokyo · Cape Town</div>
-  <ul class="footer-social" style="display:flex; gap:2rem; list-style:none;">
-    <li><a href="journal.html" style="font-size:0.65rem; text-decoration:none; color:rgba(245,240,232,0.3);">Journal</a></li>
-    <li><a href="sustainability.html" style="font-size:0.65rem; text-decoration:none; color:rgba(245,240,232,0.3);">Sustainability</a></li>
-  </ul>
+<div class="footer-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 2rem 5%;">
+  <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+    <div class="footer-loc" style="font-size: 0.65rem; color: rgba(245,240,232,0.5);">Oslo · London · Tokyo · Cape Town</div>
+    <div style="font-size: 0.6rem; color: rgba(245,240,232,0.2);">&copy; <span class="year"></span> Forma Studio. All rights reserved.</div>
+  </div>
+  <div style="display: flex; align-items: center; gap: 2rem;">
+    <img src="../assets/Powered_by_dark_background.png" alt="Powered by SynonTech" style="height: 44px; width: auto; opacity: 0.4;">
+    <ul class="footer-social" style="display:flex; gap:2rem; list-style:none; margin: 0;">
+      <li><a href="journal.html" style="font-size:0.65rem; text-decoration:none; color:rgba(245,240,232,0.3);">Journal</a></li>
+      <li><a href="sustainability.html" style="font-size:0.65rem; text-decoration:none; color:rgba(245,240,232,0.3);">Sustainability</a></li>
+    </ul>
+  </div>
 </div>
 
 <script src="forma-script.js"></script>

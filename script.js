@@ -84,6 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     syncStudioRepos();
 
+    // --- DYNAMIC YEAR ---
+    const yearElements = document.querySelectorAll('.year');
+    yearElements.forEach(el => el.textContent = new Date().getFullYear());
+
     // --- SUBTLE PARALLAX ---
     document.addEventListener('mousemove', (e) => {
         const amount = 15;

@@ -170,4 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetchLivePrices();
     setInterval(fetchLivePrices, 60000);
+
+    // --- DYNAMIC YEAR ---
+    const yearElements = document.querySelectorAll('.year');
+    yearElements.forEach(el => el.textContent = new Date().getFullYear());
 });

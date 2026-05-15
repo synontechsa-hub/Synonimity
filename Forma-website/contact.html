@@ -627,13 +627,19 @@ nav {
   </div>
 </div>
 
-<div class="footer-bar">
-  <div class="footer-loc">Oslo · London · Tokyo · Cape Town</div>
-  <ul class="footer-social">
-    <li><a href="journal.html">Journal</a></li>
-    <li><a href="sustainability.html">Sustainability</a></li>
-    <li><a href="404-v1.html">Instagram</a></li>
-  </ul>
+<div class="footer-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3.5rem; background: var(--dark); border-top: 1px solid var(--border);">
+  <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+    <div class="footer-loc" style="font-size: 0.65rem; color: var(--muted);">Oslo · London · Tokyo · Cape Town</div>
+    <div style="font-size: 0.6rem; color: rgba(245,240,232,0.2);">&copy; <span class="year"></span> Forma Studio. All rights reserved.</div>
+  </div>
+  <div style="display: flex; align-items: center; gap: 2rem;">
+    <img src="../assets/Powered_by_dark_background.png" alt="Powered by SynonTech" style="height: 44px; width: auto; opacity: 0.4;">
+    <ul class="footer-social" style="display:flex; gap:2rem; list-style:none; margin: 0;">
+      <li><a href="journal.html">Journal</a></li>
+      <li><a href="sustainability.html">Sustainability</a></li>
+      <li><a href="404-v1.html">Instagram</a></li>
+    </ul>
+  </div>
 </div>
 
 <script>
@@ -726,6 +732,10 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 setTimeout(() => {
   document.querySelectorAll('.left-panel .fade-up, .right-panel .fade-up').forEach(el => el.classList.add('visible'));
 }, 120);
+
+// --- DYNAMIC YEAR ---
+const yearElements = document.querySelectorAll('.year');
+yearElements.forEach(el => el.textContent = new Date().getFullYear());
 </script>
 </body>
 </html>

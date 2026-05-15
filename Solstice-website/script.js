@@ -182,6 +182,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial render
     renderCart();
 
+    // --- DYNAMIC YEAR ---
+    const yearElements = document.querySelectorAll('.year');
+    yearElements.forEach(el => el.textContent = new Date().getFullYear());
+
     // Newsletter form interaction
     const newsletterForm = document.querySelector('.newsletter-form');
     const newsletterConfirmation = document.querySelector('.newsletter-confirmation');

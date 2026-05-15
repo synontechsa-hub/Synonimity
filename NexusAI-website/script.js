@@ -134,4 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // --- DYNAMIC YEAR ---
+    const yearElements = document.querySelectorAll('.year');
+    yearElements.forEach(el => el.textContent = new Date().getFullYear());
 });
