@@ -58,25 +58,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- GITHUB SYNC FOR SYNONTECH CARD ---
-    const synonTechStatus = document.querySelector('.lock-tag');
+    // --- GITHUB SYNC FOR synontech CARD ---
+    const synontechStatus = document.querySelector('.lock-tag');
 
     async function syncStudioRepos() {
         try {
-            const response = await fetch('https://api.github.com/users/SynonTechSA-Hub/repos?sort=updated');
+            const response = await fetch('https://api.github.com/users/synontechsa-hub/repos?sort=updated');
             const repos = await response.json();
             
             // Filter out forks and website repos
             const studioRepos = repos.filter(repo => !repo.fork && !repo.name.toLowerCase().endsWith('-website'));
             const projectCount = studioRepos.length;
             
-            if (synonTechStatus) {
+            if (synontechStatus) {
                 // Find the most recently updated repo
                 const latestRepo = studioRepos[0];
                 const lastUpdated = new Date(latestRepo.updated_at).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
                 
-                synonTechStatus.innerHTML = `<span>${projectCount} Projects</span> • <small>Updated ${lastUpdated}</small>`;
-                synonTechStatus.style.background = 'var(--accent)';
+                synontechStatus.innerHTML = `<span>${projectCount} Projects</span> • <small>Updated ${lastUpdated}</small>`;
+                synontechStatus.style.background = 'var(--accent)';
             }
         } catch (err) {
             console.warn('Github sync failed');
