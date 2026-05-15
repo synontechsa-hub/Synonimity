@@ -88,6 +88,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const yearElements = document.querySelectorAll('.year');
     yearElements.forEach(el => el.textContent = new Date().getFullYear());
 
+    // --- INDUSTRIAL SLIDESHOW ---
+    const slides = document.querySelectorAll('.slide');
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        const nextSlide = () => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        };
+        setInterval(nextSlide, 5000); // Change image every 5 seconds
+    }
+
     // --- SUBTLE PARALLAX ---
     document.addEventListener('mousemove', (e) => {
         const amount = 15;

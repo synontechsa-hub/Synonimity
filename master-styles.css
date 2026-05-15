@@ -183,6 +183,29 @@ nav.scrolled {
     box-shadow: 0 0 30px rgba(0, 243, 255, 0.6), 0 0 60px rgba(57, 255, 20, 0.4) !important;
 }
 
+/* SLIDESHOW */
+.slideshow-container {
+    position: relative;
+    overflow: hidden;
+}
+.slides {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+.slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out, transform 8s linear;
+}
+.slide.active {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
 @keyframes neonGradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
