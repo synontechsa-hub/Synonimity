@@ -244,170 +244,165 @@ nav.scrolled {
 
 /* FEATURED PROJECT: LINKER.AI */
 .featured-project {
-    background: var(--primary);
-    border-radius: 24px;
-    padding: 5rem 4rem;
+    background: #0a0a0c;
+    background-image:
+        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15), transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.05), transparent 40%);
+    border-radius: 32px;
+    padding: 6rem 5rem;
     color: #fff;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-}
-
-.featured-project::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    width: 40%; height: 100%;
-    background: radial-gradient(circle at 100% 50%, rgba(59, 130, 246, 0.1), transparent 70%);
-    pointer-events: none;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .linker-container {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 4rem;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 5rem;
     align-items: center;
     position: relative;
     z-index: 2;
 }
 
 .linker-brand {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .linker-brand img {
-    height: 50px;
-    filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.3));
+    height: 60px;
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.4));
 }
 
 .linker-content h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 1.5rem;
     line-height: 1.1;
+    letter-spacing: -0.02em;
 }
 
 .linker-content p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 2.5rem;
-    max-width: 500px;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    line-height: 1.7;
 }
 
 .linker-features {
     list-style: none;
     display: grid;
-    gap: 1.2rem;
-    margin-bottom: 3.5rem;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
 }
 
 .linker-features li {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    font-size: 1rem;
+    gap: 1.25rem;
+    font-size: 1.05rem;
     color: rgba(255, 255, 255, 0.9);
 }
 
 .linker-features i {
     color: var(--accent);
     width: 24px;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
+    text-align: center;
 }
 
 .linker-cta {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .featured-project .btn-secondary {
     color: #fff;
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .featured-project .btn-secondary:hover {
     border-color: var(--accent);
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--accent);
+    background: var(--accent);
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 .status-tag {
     font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--accent);
-    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
     border: 1px solid var(--accent);
     border-radius: 100px;
-    background: rgba(59, 130, 246, 0.05);
+    background: rgba(59, 130, 246, 0.2);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
 }
 
 .linker-visual {
+    position: relative;
     height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-    perspective: 1000px;
 }
 
-/* NEURAL NETWORK ANIMATION */
+/* SPATIAL NETWORK VISUAL */
 .neural-network {
     position: relative;
-    width: 300px;
-    height: 300px;
-    transform-style: preserve-3d;
-    animation: rotate3d 20s linear infinite;
-}
-
-@keyframes rotate3d {
-    from { transform: rotateY(0deg) rotateX(10deg); }
-    to { transform: rotateY(360deg) rotateX(10deg); }
+    width: 100%;
+    height: 100%;
 }
 
 .node {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     background: var(--accent);
     border-radius: 50%;
     box-shadow: 0 0 15px var(--accent), 0 0 30px var(--accent);
+    animation: pulseNode 3s infinite ease-in-out;
 }
 
-.n1 { top: 20%; left: 20%; animation: pulse 2s infinite; }
-.n2 { top: 80%; left: 30%; animation: pulse 2s infinite 0.5s; }
-.n3 { top: 50%; right: 10%; animation: pulse 2s infinite 1s; }
-.n4 { top: 10%; right: 30%; animation: pulse 2s infinite 1.5s; }
-.n5 { top: 90%; right: 20%; animation: pulse 2s infinite 0.2s; }
+.n1 { top: 20%; left: 30%; animation-delay: 0s; }
+.n2 { top: 60%; left: 10%; animation-delay: 0.5s; }
+.n3 { top: 80%; left: 50%; animation-delay: 1s; }
+.n4 { top: 40%; left: 70%; animation-delay: 1.5s; }
+.n5 { top: 10%; left: 60%; animation-delay: 2s; }
 
 .line {
     position: absolute;
     background: linear-gradient(90deg, var(--accent), transparent);
     height: 1px;
-    transform-origin: left center;
     opacity: 0.2;
+    transform-origin: left center;
 }
 
-.l1 { top: 22%; left: 22%; width: 140px; transform: rotate(35deg); }
-.l2 { top: 82%; left: 32%; width: 120px; transform: rotate(-40deg); }
-.l3 { top: 52%; right: 12%; width: 100px; transform: rotate(180deg); }
+.l1 { top: 21%; left: 31%; width: 100px; transform: rotate(140deg); }
+.l2 { top: 61%; left: 11%; width: 120px; transform: rotate(30deg); }
+.l3 { top: 41%; left: 71%; width: 80px; transform: rotate(-110deg); }
 
-@keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.6; }
-    50% { transform: scale(1.4); opacity: 1; box-shadow: 0 0 40px var(--accent); }
+@keyframes pulseNode {
+    0%, 100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.5); opacity: 1; }
 }
 
-@keyframes lineFlow {
-    0% { transform: scaleX(0); opacity: 0; }
-    50% { transform: scaleX(1); opacity: 0.3; }
-    100% { transform: scaleX(0); opacity: 0; transform-origin: right center; }
+@media (max-width: 992px) {
+    .linker-container { grid-template-columns: 1fr; gap: 4rem; text-align: center; }
+    .linker-content p { margin-left: auto; margin-right: auto; }
+    .linker-features { justify-content: center; }
+    .linker-features li { justify-content: center; }
+    .linker-cta { justify-content: center; }
 }
 
 @media (max-width: 768px) {
-    .linker-container { grid-template-columns: 1fr; gap: 2rem; }
-    .featured-project { padding: 2rem; }
+    .featured-project { padding: 4rem 2rem; }
     .linker-cta { flex-direction: column; align-items: flex-start; gap: 1rem; }
+}
 }
 
 /* ABOUT */
