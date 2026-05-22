@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onyx & Ivy | Bespoke Floral Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #F9F6F0; /* Muted Cream */
+            --text: #1A1A1A; /* Charcoal */
+            --accent: #12221A; /* Forest Green */
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-weight: 300;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* ── NAV ── */
+        nav {
+            padding: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0; width: 100%;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5em;
+            font-weight: 300;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .menu-link {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            text-decoration: none;
+            color: var(--text);
+            opacity: 0.6;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            position: relative;
+        }
+
+        .hero-text {
+            width: 50%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            font-weight: 300;
+            font-style: italic;
+            line-height: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .hero-sub {
+            font-size: 0.9rem;
+            max-width: 300px;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+        }
+
+        .hero-image-wrap {
+            position: absolute;
+            right: 10%;
+            width: 45%;
+            height: 70vh;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%) sepia(10%);
+            transition: transform 1.5s ease-out;
+        }
+
+        /* ── MASONRY SECTION ── */
+        .gallery {
+            padding: 10rem 10%;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1.2s cubic-bezier(0.2, 0.6, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-item {
+            position: relative;
+        }
+
+        .item-1 { grid-column: 2 / 7; }
+        .item-2 { grid-column: 8 / 12; margin-top: 15rem; }
+        .item-3 { grid-column: 4 / 10; margin-top: 5rem; }
+
+        .img-container {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background-color: #eee;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .item-label {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-style: italic;
+        }
+
+        .item-desc {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.5;
+        }
+
+        /* ── MOBILE ── */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding-top: 10rem;
+                justify-content: flex-start;
+            }
+            .hero-text { width: 100%; margin-bottom: 3rem; }
+            .hero-image-wrap { position: relative; right: 0; width: 100%; height: 50vh; }
+            .hero-title { font-size: 4rem; }
+
+            .gallery-item { grid-column: span 12 !important; margin-top: 4rem !important; }
+            .gallery { padding: 5rem 10%; }
+        }
+
+        footer {
+            padding: 8rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .footer-copy {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            opacity: 0.6;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div>
+            <a href="../index.html" class="menu-link" style="margin-right: 2rem;">← Portfolio</a>
+            <a href="#" class="logo">Onyx & Ivy</a>
+        </div>
+        <a href="#" class="menu-link">Inquiry</a>
+    </nav>
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-text">
+                <h1 class="hero-title">The poetry of <br><em>untamed</em> blooms.</h1>
+                <p class="hero-sub">Bespoke floral architecture for the curated life. Based in South Africa, available worldwide.</p>
+            </div>
+            <div class="hero-image-wrap">
+                <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=2070&auto=format&fit=crop" alt="Floral Hero" class="hero-img">
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div class="gallery-item item-1 reveal">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=1000" alt="Floral Art" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <h3 class="item-label">Desert Rose</h3>
+                <p class="item-desc">Seasonal Installation / 2024</p>
+            </div>
+
+            <div class="gallery-item item-2 reveal">
+                <div class="img-container" style="aspect-ratio: 1/1;">
+                    <img src="https://images.unsplash.com/photo-1533616688419-b7a585564566?q=80&w=1000" alt="Floral Art" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <h3 class="item-label">Velvet Night</h3>
+                <p class="item-desc">Editorial Design</p>
+            </div>
+
+            <div class="gallery-item item-3 reveal">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?q=80&w=1000" alt="Floral Art" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <h3 class="item-label">Wild Orchids</h3>
+                <p class="item-desc">Wedding Concept</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p class="footer-copy">&copy; <span id="year"></span> Onyx & Ivy &nbsp;·&nbsp; Bespoke Floristry</p>
+        <img src="../assets/Powered_by_light_background.png" alt="Powered by synontech" style="height: 25px; opacity: 0.6;">
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Subtle Parallax on Hero Image
+        window.addEventListener('scroll', () => {
+            const img = document.querySelector('.hero-img');
+            const scroll = window.pageYOffset;
+            img.style.transform = `translateY(${scroll * 0.15}px)`;
+        });
+    </script>
+
+</body>
+</html>

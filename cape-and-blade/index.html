@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cape & Blade | Urban Barbershop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0D0D0D;
+            --border: #262626;
+            --white: #F2F2F2;
+            --accent: #C8A96E; /* Keeping your signature gold for high-end feel */
+            --font-main: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--white);
+            font-family: var(--font-main);
+            overflow-x: hidden;
+        }
+
+        /* ── BRUTALIST GRID ── */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            min-height: 100vh;
+            border-left: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* ── HERO SECTION ── */
+        .hero {
+            grid-column: span 12;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .hero-video-placeholder {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(13,13,13,0.7), rgba(13,13,13,0.7)),
+                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop'); /* High-end barber shop image */
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(100%) contrast(120%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-logo {
+            width: 320px;
+            max-width: 80vw;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+        }
+
+        .hero-title {
+            font-weight: 900;
+            font-size: clamp(3rem, 15vw, 10rem);
+            line-height: 0.85;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .hero-tagline {
+            font-size: 0.75rem;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* ── INFO BLOCKS ── */
+        .info-block {
+            grid-column: span 12;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .info-card {
+            grid-column: span 6;
+            padding: 4rem 2rem;
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .info-card:last-child {
+            border-right: none;
+        }
+
+        .label {
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-title {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .info-text {
+            color: #888;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            max-width: 400px;
+        }
+
+        /* ── STICKY NAVIGATION SHEET ── */
+        .nav-sheet {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 2rem);
+            max-width: 500px;
+            background: rgba(38, 38, 38, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 2rem;
+            padding: 0.75rem;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .wait-time {
+            padding-left: 1.5rem;
+        }
+
+        .wait-label {
+            display: block;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #aaa;
+        }
+
+        .wait-val {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--white);
+        }
+
+        .wait-val span {
+            color: #4ade80; /* Green pulse color */
+            margin-right: 0.4rem;
+        }
+
+        .check-in-btn {
+            background-color: var(--accent);
+            color: #000;
+            text-decoration: none;
+            padding: 1.1rem 2rem;
+            border-radius: 1.5rem;
+            font-weight: 900;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .check-in-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            z-index: 100;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            background: rgba(13,13,13,0.5);
+            backdrop-filter: blur(10px);
+            transition: border-color 0.3s;
+        }
+
+        .back-btn:hover {
+            border-color: var(--accent);
+        }
+
+        /* ── MOBILE ADAPTATION ── */
+        @media (max-width: 768px) {
+            .info-card {
+                grid-column: span 12;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+            .info-card:last-child {
+                border-bottom: none;
+            }
+            .hero-title {
+                font-size: 5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 1.5s infinite;
+        }
+
+        footer {
+            grid-column: span 12;
+            padding: 4rem 2rem 8rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-copy {
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+
+        <!-- HERO -->
+        <section class="hero">
+            <a href="../index.html" class="back-btn">← Back</a>
+            <div class="hero-video-placeholder"></div>
+            <div class="hero-content">
+                <img src="../assets/Cape_&_Blade/Cape_&_Blade_logo_white.png" alt="Cape & Blade Logo" class="hero-logo">
+                <h1 class="hero-title">PRECISION<br>CULTURE.</h1>
+                <p class="hero-tagline">Cape Town · Urban Grooming</p>
+            </div>
+        </section>
+
+        <!-- INFO -->
+        <section class="info-block">
+            <div class="info-card">
+                <p class="label">The Studio</p>
+                <h2 class="info-title">Industrial Style.<br>Zero Defect.</h2>
+                <p class="info-text">Founded on the principles of engineering precision. We don't just cut hair; we execute technical grooming with architectural accuracy.</p>
+            </div>
+            <div class="info-card">
+                <p class="label">Hours</p>
+                <h2 class="info-title">Mon — Sat<br>09:00 — 20:00</h2>
+                <p class="info-text">Walk-ins welcome. Live wait-times available via our digital check-in system below.</p>
+            </div>
+        </section>
+
+        <!-- SPACER FOR SCROLLING -->
+        <div style="grid-column: span 12; height: 50vh; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: #333; text-transform: uppercase; letter-spacing: 1em; font-size: 0.7rem;">
+            Experience Active
+        </div>
+
+        <footer>
+            <p class="footer-copy">&copy; <span id="year"></span> Cape & Blade &nbsp;·&nbsp; Precision Grooming</p>
+            <img src="../assets/Powered_by_black_background.png" alt="Powered by synontech" style="height: 25px; opacity: 0.5;">
+        </footer>
+
+    </div>
+
+    <!-- STICKY NAV -->
+    <div class="nav-sheet">
+        <div class="wait-time">
+            <span class="wait-label">Current Wait</span>
+            <div class="wait-val"><span class="dot"></span>12 MINS</div>
+        </div>
+        <a href="#" class="check-in-btn">Check In Live</a>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

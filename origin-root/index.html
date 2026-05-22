@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origin Root | Specialty Coffee Roastery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #EFEAD8; /* Unbleached Paper */
+            --dark: #2B1A12; /* Espresso */
+            --accent: #D35400; /* Terracotta */
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'EB Garamond', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--dark);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ── PAPER TEXTURE ── */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: url("https://www.transparenttextures.com/patterns/p6.png"); /* Subtle paper grain */
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .hero-left {
+            width: 50%;
+            padding: 8rem 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-right {
+            width: 50%;
+            background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            filter: sepia(20%) contrast(110%);
+        }
+
+        .hero-label {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            line-height: 0.95;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            max-width: 450px;
+            color: #4a3a32;
+        }
+
+        .back-home {
+            position: absolute;
+            top: 2rem;
+            left: 5%;
+            z-index: 100;
+            font-family: var(--font-display);
+            font-style: italic;
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 1.1rem;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        .back-home:hover {
+            opacity: 1;
+        }
+
+        /* ── TIMELINE ── */
+        .timeline-section {
+            padding: 10rem 0;
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            margin-bottom: 15rem;
+            padding: 0 5%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .item-content {
+            max-width: 350px;
+        }
+
+        .timeline-item:nth-child(even) {
+            display: flex;
+            justify-content: flex-end;
+            text-align: right;
+        }
+
+        .step-num {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.3;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .step-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ── SVG PATH ── */
+        .scroll-svg {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .scroll-path {
+            fill: none;
+            stroke: var(--accent);
+            stroke-width: 2;
+            stroke-dasharray: 8 12;
+            opacity: 0.3;
+        }
+
+        /* ── MOBILE ── */
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; }
+            .hero-left, .hero-right { width: 100%; }
+            .hero-right { height: 50vh; order: -1; }
+            .timeline-item, .timeline-item:nth-child(even) { text-align: left; justify-content: flex-start; }
+            .scroll-svg { left: 20px; transform: none; }
+        }
+
+        footer {
+            padding: 6rem 5%;
+            text-align: center;
+            border-top: 1px solid rgba(43, 26, 18, 0.1);
+        }
+
+        .footer-copy {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: rgba(43, 26, 18, 0.6);
+        }
+
+    </style>
+</head>
+<body>
+
+    <a href="../index.html" class="back-home">← Back to Portfolio</a>
+
+    <section class="hero">
+        <div class="hero-left">
+            <p class="hero-label">South African Roastery</p>
+            <h1 class="hero-title">Crafted by hand.<br>Rooted in <em>origin.</em></h1>
+            <p class="hero-desc">Small-batch coffee roasting with a focus on ethical sourcing and the untamed soul of the bean.</p>
+        </div>
+        <div class="hero-right"></div>
+    </section>
+
+    <section class="timeline-section">
+
+        <svg class="scroll-svg" viewBox="0 0 800 1500" preserveAspectRatio="none">
+            <path id="timelinePath" class="scroll-path" d="M400,0 Q450,200 350,400 T450,800 T350,1200 T400,1500" />
+        </svg>
+
+        <div class="timeline-item">
+            <div class="item-content">
+                <span class="step-num">01</span>
+                <h2 class="step-title">The Altitude</h2>
+                <p>We source exclusively from high-altitude farmers in Ethiopia and Colombia who share our commitment to soil health.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="item-content">
+                <span class="step-num">02</span>
+                <h2 class="step-title">The Roast</h2>
+                <p>Monitored by eye and ear. Our roasting process is a dialogue between human intuition and heat.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="item-content">
+                <span class="step-num">03</span>
+                <h2 class="step-title">The Pour</h2>
+                <p>The final stage. A celebration of complexity, delivered fresh from our roastery to your cup.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p class="footer-copy">&copy; <span id="year"></span> Origin Root &nbsp;·&nbsp; Roasted in South Africa</p>
+        <img src="../assets/Powered_by_light_background.png" alt="Powered by synontech" style="height: 25px; opacity: 0.5;">
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
