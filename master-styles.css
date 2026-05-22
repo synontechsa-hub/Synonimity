@@ -412,7 +412,7 @@ nav.scrolled {
 }
 
 /* ABOUT */
-.about-flex { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: flex-start; }
+.about-flex { display: flex; flex-direction: column; gap: 3rem; }
 .about-text p { margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-main); }
 .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; margin-top: 3rem; margin-bottom: 2rem; }
 .skill-group h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 1rem; }
@@ -428,10 +428,15 @@ nav.scrolled {
     white-space: nowrap;
 }
 
-.about-stat { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1rem; }
-.stat-card { background: #fff; border: 1px solid var(--border); padding: 2.5rem; border-radius: 12px; text-align: center; }
-.stat-num { font-size: 3rem; font-weight: 800; color: var(--primary); line-height: 1; }
-.stat-desc { font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; margin-top: 0.5rem; color: var(--text-light); }
+.about-stat {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.stat-card { background: #fff; border: 1px solid var(--border); padding: 1.5rem; border-radius: 12px; text-align: center; }
+.stat-num { font-size: 2.2rem; font-weight: 800; color: var(--primary); line-height: 1; }
+.stat-desc { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; margin-top: 0.5rem; color: var(--text-light); }
 
 /* FOOTER */
 footer { padding: 80px 0 40px; border-top: 1px solid var(--border); }
@@ -448,7 +453,7 @@ footer { padding: 80px 0 40px; border-top: 1px solid var(--border); }
 @media (max-width: 768px) {
     .project-grid { grid-template-columns: 1fr; }
     .about-flex { grid-template-columns: 1fr; gap: 4rem; }
-    .about-stat { margin-top: 4rem; }
+    .about-stat { grid-template-columns: 1fr; margin-top: 4rem; }
     .hero h1 { font-size: 2.5rem; }
     .nav-links { display: none; }
     .hero-actions { flex-direction: column; }
