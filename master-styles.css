@@ -1,29 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+
 :root {
-    --primary: #0F172A;
-    --accent: #3B82F6;
-    --accent-dark: #1D4ED8;
-    --accent-glow: rgba(59, 130, 246, 0.15);
-    --text-main: #1E293B;
-    --text-light: #64748B;
-    --bg-white: #FFFFFF;
-    --bg-grey: #F8FAFC;
-    --bg-glass: rgba(255, 255, 255, 0.7);
-    --border: rgba(226, 232, 240, 0.8);
-    --border-bright: rgba(226, 232, 240, 1);
-    --font-main: 'Inter', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --bg-dark: #050505;
+    --bg-void: #020b18;
+    --neon-blue: #00f3ff;
+    --neon-green: #39ff14;
+    --neon-blue-glow: rgba(0, 243, 255, 0.15);
+    --neon-green-glow: rgba(57, 255, 20, 0.15);
+    --text-main: #e2e8f0;
+    --text-light: #94a3b8;
+    --border-blue: rgba(0, 243, 255, 0.3);
+    --border-green: rgba(57, 255, 20, 0.3);
+    
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Rajdhani', sans-serif;
+    --font-mono: 'Share Tech Mono', monospace;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-    font-family: var(--font-main);
-    color: var(--primary);
-    background: var(--bg-white);
+    font-family: var(--font-body);
+    color: var(--text-main);
+    background: var(--bg-void);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
