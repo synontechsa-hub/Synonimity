@@ -84,12 +84,12 @@ nav.scrolled {
     display: flex; justify-content: space-between; align-items: center;
 }
 .brand {
-    font-weight: 800; font-size: 1.1rem; letter-spacing: 0.05em;
-    display: flex; align-items: center; gap: 1rem;
+    font-weight: 900; font-size: 1.5rem; letter-spacing: -0.02em;
+    display: block;
     text-transform: uppercase;
 }
 .brand-logo { height: 50px; width: auto; border-radius: 8px; }
-.brand span { font-weight: 300; color: var(--text-light); }
+.brand span { font-family: var(--font-heading); font-weight: 900; color: var(--neon-blue); }
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-links a {
     text-decoration: none; color: var(--text-main);
