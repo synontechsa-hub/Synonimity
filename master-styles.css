@@ -75,9 +75,9 @@ nav {
 }
 nav.scrolled {
     height: 70px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(5, 5, 5, 0.95);
     border-bottom-color: var(--border-bright);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 .nav-container {
     width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 5%;
