@@ -81,6 +81,21 @@ document.addEventListener('DOMContentLoaded', () => {
     syncGithubStats('Feed-Rate', 'gh-kerf');
     syncGithubStats('Byte-This-Games', 'gh-games');
 
+    // --- MKVOODOO RELEASE SYNC ---
+    async function syncMKVoodooVersion() {
+        try {
+            const response = await fetch('https://api.github.com/repos/synontechsa-hub/MKVoodoo/releases/latest');
+            const data = await response.json();
+            const versionTag = document.getElementById('mkv-version-tag');
+            if (versionTag && data.tag_name) {
+                versionTag.textContent = `[${data.tag_name}]`;
+            }
+        } catch (err) {
+            console.warn('MKVoodoo version sync failed');
+        }
+    }
+    syncMKVoodooVersion();
+
     // --- DYNAMIC YEAR ---
     const yearElements = document.querySelectorAll('.year');
     yearElements.forEach(el => el.textContent = new Date().getFullYear());
