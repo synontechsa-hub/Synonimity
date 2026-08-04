@@ -58,31 +58,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- GITHUB SYNC FOR synontech CARD ---
-    const synontechStatus = document.querySelector('.lock-tag');
-
-    async function syncStudioRepos() {
+    // --- GITHUB SYNC ---
+    async function syncGithubStats(org, elementId) {
         try {
-            const response = await fetch('https://api.github.com/users/synontechsa-hub/repos?sort=updated');
+            const response = await fetch(`https://api.github.com/users/${org}/repos?sort=updated`);
             const repos = await response.json();
+            const count = repos.filter(repo => !repo.fork).length;
             
-            // Filter out forks and website repos
-            const studioRepos = repos.filter(repo => !repo.fork && !repo.name.toLowerCase().endsWith('-website'));
-            const projectCount = studioRepos.length;
-            
-            if (synontechStatus) {
-                // Find the most recently updated repo
-                const latestRepo = studioRepos[0];
-                const lastUpdated = new Date(latestRepo.updated_at).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-                
-                synontechStatus.innerHTML = `<span>${projectCount} Projects</span> • <small>Updated ${lastUpdated}</small>`;
-                synontechStatus.style.background = 'var(--accent)';
+            const element = document.getElementById(elementId);
+            if (element) {
+                const numDisplay = element.querySelector('.stat-num');
+                if (numDisplay) {
+                    animateValue(numDisplay, 0, count, 1500);
+                }
             }
         } catch (err) {
-            console.warn('Github sync failed');
+            console.warn(`Github sync failed for ${org}`);
         }
     }
-    syncStudioRepos();
+
+    syncGithubStats('synontechsa-hub', 'gh-main');
+    syncGithubStats('Feed-Rate', 'gh-kerf');
+    syncGithubStats('Byte-This-Games', 'gh-games');
 
     // --- DYNAMIC YEAR ---
     const yearElements = document.querySelectorAll('.year');
